@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del Nuevo Musulmán - Mezquita Abdullah</title>
+    <meta name="description" content="Guía completa para nuevos musulmanes: creencias, Shahada, Wudu, Salat, Zakat, Sawm, Hajj y Akhlaq.">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new-muslims.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Mezquita Abdullah Logo">
+                <span data-lang-key="site_name">Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-lang-key="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" class="active" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-lang-key="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-lang-key="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-lang-key="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header nm-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="badge"><i class="fas fa-star-and-crescent"></i> Bismillah</span>
+                <h1 data-lang-key="nm_title">Guía del Nuevo Musulmán</h1>
+                <p data-lang-key="nm_subtitle">Una guía introductoria por capítulos, inspirada en “The New Muslim Guide”, para acompañarte en tu nueva vida espiritual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Source banner (inspiration disclosure) -->
+    <section class="nm-source-top">
+        <div class="container">
+            <div class="source-top-box">
+                <div class="source-top-icon"><i class="fas fa-book-open"></i></div>
+                <div class="source-top-text">
+                    <strong data-lang-key="nm_inspired_label">Contenido inspirado en “The New Muslim Guide”</strong>
+                    <p data-lang-key="nm_inspired_desc">Una guía ilustrada al Islam por Fahd ibn Saalim Baa Hammaam, revisada por sabios musulmanes, traducida a 26 idiomas. Te recomendamos visitar la fuente original para leer el contenido completo.</p>
+                </div>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="source-top-cta">
+                    <span data-lang-key="nm_source_visit">Visitar el sitio original</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick navigation -->
+    <section class="nm-toc">
+        <div class="container">
+            <div class="toc-grid">
+                <a href="#creed" class="toc-item"><i class="fas fa-heart"></i><span data-lang-key="nm_section_creed">1. Las creencias</span></a>
+                <a href="#shahada" class="toc-item"><i class="fas fa-comment-dots"></i><span data-lang-key="nm_section_shahada">2. La Shahada</span></a>
+                <a href="#purification" class="toc-item"><i class="fas fa-tint"></i><span data-lang-key="nm_section_purification">3. Purificación</span></a>
+                <a href="#wudu" class="toc-item"><i class="fas fa-hands-wash"></i><span data-lang-key="nm_section_wudu">4. Wudu</span></a>
+                <a href="#prayer" class="toc-item"><i class="fas fa-praying-hands"></i><span data-lang-key="nm_section_prayer">5. Salat</span></a>
+                <a href="#zakat" class="toc-item"><i class="fas fa-hand-holding-heart"></i><span data-lang-key="nm_section_zakat">6. Zakat</span></a>
+                <a href="#fasting" class="toc-item"><i class="fas fa-moon"></i><span data-lang-key="nm_section_fasting">7. Sawm</span></a>
+                <a href="#hajj" class="toc-item"><i class="fas fa-kaaba"></i><span data-lang-key="nm_section_hajj">8. Hajj</span></a>
+                <a href="#manners" class="toc-item"><i class="fas fa-leaf"></i><span data-lang-key="nm_section_manners">9. Akhlaq</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Creed -->
+    <section class="nm-content-section" id="creed">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">1</div>
+                <h2><i class="fas fa-heart"></i> <span data-lang-key="nm_section_creed">Las creencias del Islam</span></h2>
+                <p>El Islam se basa en seis pilares de fe (Arkan al-Iman). Creer en ellos es la base de la creencia islámica.</p>
+                <ul class="nm-list">
+                    <li><strong>1. La fe en Allah:</strong> Creer en un único Dios, Creador del universo, sin asociados, sin imagen, único en Sus atributos.</li>
+                    <li><strong>2. La fe en los ángeles:</strong> Seres de luz creados por Allah para cumplir Sus mandatos (Gabriel, Miguel, etc.).</li>
+                    <li><strong>3. La fe en los Libros Revelados:</strong> La Torá, el Evangelio, los Salmos y el Corán (el último y preservado).</li>
+                    <li><strong>4. La fe en los Profetas:</strong> Desde Adán hasta Muhammad ﷺ, pasando por Noé, Abraham, Moisés, Jesús y muchos más.</li>
+                    <li><strong>5. La fe en el Día del Juicio:</strong> Día en que cada alma rendirá cuentas y recibirá su recompensa o castigo eterno.</li>
+                    <li><strong>6. La fe en el Decreto Divino (Qadar):</strong> Todo lo que sucede ocurre con el conocimiento y permiso de Allah, lo bueno y lo difícil.</li>
+                </ul>
+            
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Shahada -->
+    <section class="nm-content-section alt" id="shahada">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">2</div>
+                <h2><i class="fas fa-comment-dots"></i> <span data-lang-key="nm_section_shahada">La Shahada</span></h2>
+                <p>La Shahada es el testimonio de fe — la puerta de entrada al Islam. Con su pronunciación sincera, te conviertes en musulmán.</p>
+                <div class="shahada-box">
+                    <p class="shahada-ar">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ</p>
+                    <p class="shahada-trans">"Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah"</p>
+                    <p class="shahada-meaning">"Atestiguo que no hay más dios que Allah, y atestiguo que Muhammad es el mensajero de Allah"</p>
+                </div>
+                <h3>¿Qué significa?</h3>
+                <ul class="nm-list">
+                    <li><strong>"No hay dios sino Allah"</strong>: Rechazo de toda adoración a otros que no sean Allah, el Único Creador.</li>
+                    <li><strong>"Muhammad es Su mensajero"</strong>: Aceptación de Muhammad ﷺ como el último profeta y guía a seguir.</li>
+                </ul>
+                <p class="nm-note">✨ Una vez pronunciada con sinceridad, todos los pecados anteriores son perdonados — es como nacer de nuevo espiritualmente.</p>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Purification -->
+    <section class="nm-content-section" id="purification">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">3</div>
+                <h2><i class="fas fa-tint"></i> <span data-lang-key="nm_section_purification">La purificación (Tahara)</span></h2>
+                <p>El Islam concede gran importancia a la limpieza física y espiritual. Existen dos tipos principales de purificación:</p>
+                <div class="nm-two-cols">
+                    <div class="nm-col">
+                        <h3>🚿 Ghusl (purificación mayor)</h3>
+                        <p>Un baño completo del cuerpo, obligatorio en estos casos:</p>
+                        <ul class="nm-list">
+                            <li>Después de la relación marital</li>
+                            <li>Al fin del período menstrual</li>
+                            <li>Al fin del sangrado post-parto</li>
+                            <li>Recomendado al entrar al Islam y antes del viernes</li>
+                        </ul>
+                    </div>
+                    <div class="nm-col">
+                        <h3>💧 Wudu (purificación menor)</h3>
+                        <p>Una ablución antes de cada oración. Se requiere si:</p>
+                        <ul class="nm-list">
+                            <li>Se rompe (gas, orina, sueño profundo, etc.)</li>
+                            <li>Antes de tocar el Corán</li>
+                            <li>Antes de cualquier oración (Salat)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Wudu -->
+    <section class="nm-content-section alt" id="wudu">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">4</div>
+                <h2><i class="fas fa-hands-wash"></i> <span data-lang-key="nm_section_wudu">El Wudu (ablución)</span></h2>
+                <p>El Profeta ﷺ dijo: <em>"La oración no es aceptada sin purificación"</em>. El Wudu prepara el cuerpo y el alma para encontrarse con Allah.</p>
+                <h3>Pasos del Wudu:</h3>
+                <ol class="nm-steps-list">
+                    <li><strong>Niyyah (intención):</strong> Forma la intención en tu corazón de hacer wudu para Allah. No se pronuncia en voz alta.</li>
+                    <li><strong>Bismillah:</strong> Comienza diciendo "Bismillah" (En el nombre de Allah).</li>
+                    <li><strong>Manos:</strong> Lava ambas manos hasta las muñecas, 3 veces, empezando por la derecha.</li>
+                    <li><strong>Boca:</strong> Enjuaga la boca 3 veces.</li>
+                    <li><strong>Nariz:</strong> Aspira agua por la nariz y expúlsala, 3 veces.</li>
+                    <li><strong>Rostro:</strong> Lava todo el rostro (de la línea del cabello al mentón, de oreja a oreja), 3 veces.</li>
+                    <li><strong>Brazos:</strong> Lava el brazo derecho hasta el codo 3 veces, luego el izquierdo 3 veces.</li>
+                    <li><strong>Cabeza:</strong> Pasa las manos mojadas sobre la cabeza, una vez.</li>
+                    <li><strong>Orejas:</strong> Limpia las orejas con los dedos índices (interior y exterior), una vez.</li>
+                    <li><strong>Pies:</strong> Lava el pie derecho hasta el tobillo 3 veces, luego el izquierdo 3 veces.</li>
+                </ol>
+                <h3>Du'a después del Wudu:</h3>
+                <div class="dua-box">
+                    <p class="dua-ar">أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</p>
+                    <p class="dua-meaning">"Atestiguo que no hay más dios que Allah, único, sin asociados, y que Muhammad es Su siervo y mensajero"</p>
+                </div>
+
+                <!-- Wudu videos -->
+                <h3 class="videos-heading"><i class="fab fa-youtube" style="color: #ff0000;"></i> <span data-lang-key="nm_videos_title">Videos tutoriales en 4 idiomas</span></h3>
+                <div class="videos-grid">
+                    <a href="https://youtu.be/gR-7oGOpYB0" target="_blank" class="video-card">
+                        <div class="video-flag">🇪🇸</div>
+                        <i class="fab fa-youtube"></i>
+                        <h4>Español</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtu.be/2xS70Zn-jRk" target="_blank" class="video-card">
+                        <div class="video-flag">🇬🇧</div>
+                        <i class="fab fa-youtube"></i>
+                        <h4>English</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtube.com/shorts/ll6ayvYc3X4" target="_blank" class="video-card">
+                        <div class="video-flag">🇸🇦</div>
+                        <i class="fab fa-youtube"></i>
+                        <h4>العربية</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtu.be/o-5wVAvLxMg" target="_blank" class="video-card">
+                        <div class="video-flag">🇫🇷</div>
+                        <i class="fab fa-youtube"></i>
+                        <h4>Français</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                </div>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Prayer -->
+    <section class="nm-content-section" id="prayer">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">5</div>
+                <h2><i class="fas fa-praying-hands"></i> <span data-lang-key="nm_section_prayer">La oración (Salat)</span></h2>
+                <p>La Salat es el segundo pilar del Islam y el primero después de la Shahada. Es la conexión directa entre el siervo y su Señor, cinco veces al día.</p>
+                
+                <h3>Las cinco oraciones diarias:</h3>
+                <div class="prayers-table">
+                    <div class="prayer-row"><strong>Fajr</strong><span>Antes del amanecer</span><span>2 rak'at</span></div>
+                    <div class="prayer-row"><strong>Dhuhr</strong><span>Después del mediodía</span><span>4 rak'at</span></div>
+                    <div class="prayer-row"><strong>Asr</strong><span>Por la tarde</span><span>4 rak'at</span></div>
+                    <div class="prayer-row"><strong>Maghrib</strong><span>Después del ocaso</span><span>3 rak'at</span></div>
+                    <div class="prayer-row"><strong>Isha</strong><span>Por la noche</span><span>4 rak'at</span></div>
+                </div>
+
+                <h3>Estructura de una rak'ah:</h3>
+                <ol class="nm-steps-list">
+                    <li><strong>Qiyam:</strong> De pie, mirando a la Qibla (dirección de La Meca).</li>
+                    <li><strong>Takbir al-Ihram:</strong> Eleva las manos a la altura de los hombros y di "Allahu Akbar".</li>
+                    <li><strong>Recitación:</strong> Recita la Sura Al-Fatiha y otra sura corta (en las dos primeras rak'at).</li>
+                    <li><strong>Ruku:</strong> Inclínate diciendo "Subhana rabbi al-azim" 3 veces.</li>
+                    <li><strong>I'tidal:</strong> Levántate diciendo "Sami'a Allahu liman hamidah, rabbana wa laka al-hamd".</li>
+                    <li><strong>Sujud:</strong> Postra tocando el suelo con la frente, nariz, palmas, rodillas y pies. Di "Subhana rabbi al-a'la" 3 veces.</li>
+                    <li><strong>Jalsa:</strong> Siéntate brevemente entre las dos postraciones.</li>
+                    <li><strong>Sujud 2:</strong> Postra de nuevo (completa una rak'ah).</li>
+                    <li><strong>Tashahhud:</strong> Al final, siéntate y recita el Tashahhud.</li>
+                    <li><strong>Salam:</strong> Gira la cabeza a la derecha y luego a la izquierda diciendo "As-salamu alaykum wa rahmatullah".</li>
+                </ol>
+
+                <!-- Salat videos -->
+                <h3 class="videos-heading"><i class="fab fa-youtube" style="color: #ff0000;"></i> <span data-lang-key="nm_videos_title">Videos tutoriales en 4 idiomas</span></h3>
+                <div class="videos-grid">
+                    <a href="https://youtu.be/O7jBANtNHHU" target="_blank" class="video-card">
+                        <div class="video-flag">🇪🇸</div>
+                        <i class="fab fa-youtube"></i><h4>Español</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtu.be/zalLv2NY98k" target="_blank" class="video-card">
+                        <div class="video-flag">🇬🇧</div>
+                        <i class="fab fa-youtube"></i><h4>English</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtu.be/QIi6YSJfPTw" target="_blank" class="video-card">
+                        <div class="video-flag">🇸🇦</div>
+                        <i class="fab fa-youtube"></i><h4>العربية</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                    <a href="https://youtu.be/vgPo185P-oY" target="_blank" class="video-card">
+                        <div class="video-flag">🇫🇷</div>
+                        <i class="fab fa-youtube"></i><h4>Français</h4>
+                        <span data-lang-key="watch_video">Ver video</span>
+                    </a>
+                </div>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Zakat -->
+    <section class="nm-content-section alt" id="zakat">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">6</div>
+                <h2><i class="fas fa-hand-holding-heart"></i> <span data-lang-key="nm_section_zakat">El Zakat (caridad obligatoria)</span></h2>
+                <p>El Zakat es el tercer pilar del Islam. Es una caridad obligatoria que purifica la riqueza y ayuda a los necesitados.</p>
+                <h3>Conceptos básicos:</h3>
+                <ul class="nm-list">
+                    <li><strong>Porcentaje:</strong> 2.5% de las riquezas guardadas durante un año completo lunar (oro, plata, dinero, mercancías).</li>
+                    <li><strong>Nisab (mínimo):</strong> Equivalente al valor de 85 gramos de oro. Si tus ahorros superan ese mínimo, pagas Zakat.</li>
+                    <li><strong>Receptores:</strong> Los pobres, los necesitados, los recién convertidos al Islam, los endeudados, y los viajeros.</li>
+                </ul>
+                <p class="nm-note">💚 Además del Zakat obligatorio, existe la Sadaqah (caridad voluntaria) que se puede dar en cualquier momento y en cualquier cantidad.</p>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Fasting -->
+    <section class="nm-content-section" id="fasting">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">7</div>
+                <h2><i class="fas fa-moon"></i> <span data-lang-key="nm_section_fasting">El ayuno (Sawm)</span></h2>
+                <p>El ayuno del mes de Ramadán es el cuarto pilar del Islam. Es obligatorio para todo musulmán adulto, sano y residente.</p>
+                
+                <h3>¿En qué consiste?</h3>
+                <ul class="nm-list">
+                    <li><strong>Duración:</strong> Desde el amanecer (Fajr) hasta el ocaso (Maghrib), todos los días del mes de Ramadán.</li>
+                    <li><strong>Abstención:</strong> De comida, bebida, relaciones íntimas y comportamientos negativos (mentir, enojarse).</li>
+                    <li><strong>Suhur:</strong> Comida antes del amanecer (recomendada).</li>
+                    <li><strong>Iftar:</strong> Comida al ocaso para romper el ayuno, tradicionalmente con dátiles y agua.</li>
+                </ul>
+
+                <h3>Beneficios espirituales:</h3>
+                <ul class="nm-list">
+                    <li>Aumenta la conciencia de Allah (Taqwa)</li>
+                    <li>Desarrolla la paciencia y el autocontrol</li>
+                    <li>Crea empatía con quienes pasan hambre</li>
+                    <li>Purifica el alma y multiplica las recompensas</li>
+                </ul>
+            
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Hajj -->
+    <section class="nm-content-section alt" id="hajj">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">8</div>
+                <h2><i class="fas fa-kaaba"></i> <span data-lang-key="nm_section_hajj">El Hajj (peregrinación)</span></h2>
+                <p>El Hajj es el quinto pilar del Islam. Es obligatorio una vez en la vida para todo musulmán que tenga los medios físicos y financieros.</p>
+                
+                <h3>Información esencial:</h3>
+                <ul class="nm-list">
+                    <li><strong>Lugar:</strong> La ciudad sagrada de La Meca, Arabia Saudita.</li>
+                    <li><strong>Fecha:</strong> Del 8 al 12 del mes de Dhul-Hijjah (último mes islámico).</li>
+                    <li><strong>Vestimenta:</strong> Los hombres visten el Ihram (dos telas blancas sin coser); las mujeres visten ropa modesta.</li>
+                    <li><strong>Ritos:</strong> Circunvalar la Ka'ba (Tawaf), correr entre Safa y Marwa (Sa'i), estar en Arafat, lanzar piedras simbólicamente en Mina, sacrificio.</li>
+                </ul>
+
+                <p class="nm-note">🕋 Además del Hajj, existe la Umrah (peregrinación menor), que puede hacerse en cualquier momento del año.</p>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Manners -->
+    <section class="nm-content-section" id="manners">
+        <div class="container">
+            <div class="nm-section-card">
+                <div class="nm-num">9</div>
+                <h2><i class="fas fa-leaf"></i> <span data-lang-key="nm_section_manners">Modales islámicos (Akhlaq)</span></h2>
+                <p>El Profeta ﷺ dijo: <em>"He sido enviado para perfeccionar los buenos modales"</em>. El Islam no es solo ritual, es una forma de vivir con excelencia.</p>
+                
+                <div class="nm-manners-grid">
+                    <div class="nm-manner">
+                        <i class="fas fa-comment"></i>
+                        <h4>Saludo</h4>
+                        <p>Saluda con "As-salamu alaykum" (la paz sea contigo). La respuesta: "Wa alaykum as-salam".</p>
+                    </div>
+                    <div class="nm-manner">
+                        <i class="fas fa-utensils"></i>
+                        <h4>Comida</h4>
+                        <p>Di "Bismillah" antes de comer, come con la mano derecha y agradece con "Alhamdulillah".</p>
+                    </div>
+                    <div class="nm-manner">
+                        <i class="fas fa-users"></i>
+                        <h4>Padres</h4>
+                        <p>Honra y obedece a tus padres. El Paraíso está bajo los pies de las madres.</p>
+                    </div>
+                    <div class="nm-manner">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Vecinos</h4>
+                        <p>Trata bien a tus vecinos, sin importar su religión. El buen vecino es señal de fe.</p>
+                    </div>
+                    <div class="nm-manner">
+                        <i class="fas fa-tongue"></i>
+                        <h4>Palabra</h4>
+                        <p>Habla solo lo bueno o guarda silencio. Evita la mentira, la calumnia y el chisme.</p>
+                    </div>
+                    <div class="nm-manner">
+                        <i class="fas fa-heart"></i>
+                        <h4>Honestidad</h4>
+                        <p>Sé honesto en todos tus tratos. La honestidad lleva al Paraíso.</p>
+                    </div>
+                </div>
+                <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="chapter-source-link"><i class="fas fa-external-link-alt"></i> <span data-lang-key="nm_read_at_source">Leer el capítulo completo en New Muslim Guide</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Source attribution -->
+    <section class="nm-source">
+        <div class="container">
+            <div class="source-box">
+                <i class="fas fa-book-open"></i>
+                <div class="source-text">
+                    <p><strong data-lang-key="nm_source_label">Contenido inspirado en</strong>: The New Muslim Guide, una guía ilustrada al Islam por Fahd ibn Saalim Baa Hammaam, revisada y aprobada por sabios musulmanes de todo el mundo, traducida a 26 idiomas.</p>
+                    <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener" class="source-link">
+                        <span data-lang-key="nm_source_link">Visitar New Muslim Guide</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="nm-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>¿Necesitas ayuda personal?</h2>
+                <p>El Imam de la Mezquita Abdullah está disponible para responder tus preguntas y acompañarte en tu camino.</p>
+                <a href="https://wa.me/5359490936" target="_blank" class="btn btn-whatsapp btn-large">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-lang-key="contact_imam_wa">Contactar al Imam por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3 data-lang-key="site_name">Mezquita Abdullah</h3>
+                    </div>
+                    <p data-lang-key="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                        <li><i class="fas fa-envelope"></i> mezquitaabdullah1@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+                <p class="source-footer">📖 <span data-lang-key="nm_source_label">Contenido inspirado en</span>: <a href="https://newmuslimguide.com/es" target="_blank" rel="noopener">newmuslimguide.com/es</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="support.html" class="donate-float">
+        <i class="fas fa-hands-helping"></i>
+        <span data-lang-key="support_float">Apoya el centro</span>
+    </a>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

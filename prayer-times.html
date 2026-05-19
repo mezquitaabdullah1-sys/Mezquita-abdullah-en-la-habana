@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios de Oración - Mezquita Abdullah</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <span>Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-translate="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-translate="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header prayer-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="badge"><i class="fas fa-mosque"></i> <span data-translate="pt_badge">La Habana, Cuba</span></span>
+                <h1 data-translate="pt_title">Horarios de Oración</h1>
+                <p data-translate="pt_subtitle">Calculados según el método de la Liga Mundial Islámica para La Habana.</p>
+                <p id="ptHijriDate" class="hijri-date-display">--</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's prayer times -->
+    <section class="prayer-page-section">
+        <div class="container">
+            <div class="prayer-page-grid" id="prayerPageGrid"></div>
+
+            <!-- Download as image card -->
+            <div class="download-prayer-card" id="downloadCard">
+                <div class="dl-card-inner" id="dlCardInner">
+                    <div class="dl-header">
+                        <img src="images/logo.jpg" alt="Mezquita Abdullah Logo" class="dl-logo">
+                        <div class="dl-mosque-info">
+                            <h3>Mezquita Abdullah</h3>
+                            <p data-translate="dl_subtitle">La Habana, Cuba 🇨🇺</p>
+                        </div>
+                    </div>
+                    <div class="dl-date-section">
+                        <h2 id="dlGregorianDate">--</h2>
+                        <p id="dlHijriDate">--</p>
+                    </div>
+                    <h4 class="dl-section-title" data-translate="dl_title">⏰ Horarios de Oración</h4>
+                    <div class="dl-prayers" id="dlPrayers"></div>
+                    <div class="dl-footer">
+                        <p>📍 Obispo #13, Habana Vieja</p>
+                        <p>📞 +53 5 9490936</p>
+                    </div>
+                </div>
+
+                <div class="dl-actions">
+                    <button class="btn btn-gold btn-large" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                        <span data-translate="dl_btn">Descargar imagen</span>
+                    </button>
+                    <button class="btn btn-whatsapp" id="shareBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-translate="dl_share">Compartir</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="prayer-note">
+                <i class="fas fa-info-circle"></i>
+                <p data-translate="pt_note">Datos calculados con Aladhan API · Método: Liga Mundial Islámica · Ubicación: La Habana (23.13, -82.35)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly schedule -->
+    <section class="weekly-prayer">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="weekly_pt_tag">Próximos 7 días</span>
+                <h2 data-translate="weekly_pt_title">📅 Horarios de la semana</h2>
+            </div>
+
+            <div class="weekly-table-wrapper">
+                <table class="weekly-table" id="weeklyPrayerTable">
+                    <thead>
+                        <tr>
+                            <th data-translate="th_date">Fecha</th>
+                            <th>Fajr</th>
+                            <th>Sunrise</th>
+                            <th>Dhuhr</th>
+                            <th>Asr</th>
+                            <th>Maghrib</th>
+                            <th>Isha</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3>Mezquita Abdullah</h3>
+                    </div>
+                    <p data-translate="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                        <li><i class="fas fa-envelope"></i> mezquitaabdullah1@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="support.html" class="donate-float">
+        <i class="fas fa-hands-helping"></i>
+        <span data-translate="support_float">Apoya el centro</span>
+    </a>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/prayer-times.js"></script>
+    <script src="js/prayer-download.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
