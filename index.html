@@ -147,6 +147,10 @@
     </section>
 
     <!-- Events Carousel (Diyanet-inspired) -->
+    <div id="weekly-events">
+  <h3>الفعاليات الأسبوعية</h3>
+  <div id="events-container">جاري تحميل الفعاليات...</div>
+</div>
     <section class="events-carousel-section">
         <div class="container">
             <div class="section-header">
@@ -475,5 +479,57 @@
     <script src="js/events-carousel.js"></script>
     <script src="js/cms-events.js"></script>
     <script src="js/main.js"></script>
+    <script async function loadWeeklyEvents() {
+  const container = document.getElementById('events-container');
+  if (!container) return;
+
+  try {
+    // 1. جلب ملف index.json الذي يحتوي على قائمة الفعاليات
+    const indexResponse = await fetch('data/events/index.json');
+    if (!indexResponse.ok) throw new Error('لم يتم العثور على index.json');
+    
+    const eventsList = await indexResponse.json();
+    // نتوقع أن يكون eventsList مصفوفة تحتوي إما على أسماء الملفات أو على كائنات الفعاليات مباشرة
+    // سنفترض أنه مصفوفة من كائنات الفعاليات (كل كائن له title, date, description, image)
+    
+    if (!Array.isArray(eventsList) || eventsList.length === 0) {
+      container.innerHTML = '<p>لا توجد فعاليات حالياً.</p>';
+      return;
+    }
+
+    // 2. بناء HTML لكل فعالية
+    let eventsHTML = '<div class="events-grid">';
+    for (const event of eventsList) {
+      eventsHTML += `
+        <div class="event-card">
+          ${event.image ? <img src="${event.image}" alt="${event.title}" class="event-image"> : ''}
+          <h4>${escapeHtml(event.title)}</h4>
+          <p class="event-date">📅 ${event.date}</p>
+          <p class="event-desc">${escapeHtml(event.description)}</p>
+        </div>
+      `;
+    }
+    eventsHTML += '</div>';
+    container.innerHTML = eventsHTML;
+
+  } catch (error) {
+    console.error('خطأ في تحميل الفعاليات:', error);
+    container.innerHTML = '<p>حدث خطأ أثناء تحميل الفعاليات. يرجى المحاولة لاحقاً.</p>';
+  }
+}
+
+// دالة بسيطة لحماية النصوص من أكواد ضارة
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
+
+// تشغيل الدالة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', loadWeeklyEvents);><script>
 </body>
 </html>
