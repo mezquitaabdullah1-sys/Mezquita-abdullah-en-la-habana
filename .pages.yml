@@ -1,0 +1,24 @@
+media:
+  input: public/images
+  output: /public/images
+  content:
+  - name: 'events'
+    label: 'الفعاليات'
+    type: 'collection'
+    path: 'data/events'
+    filename: '{slug}.json'
+    fields:
+      - name: 'title'
+        label: 'عنوان الفعالية'
+        type: 'string'
+      - name: 'date'
+        label: 'تاريخ الفعالية'
+        type: 'date'
+        options:
+          format: 'YYYY-MM-DD'
+      - name: 'description'
+        label: 'وصف الفعالية'
+        type: 'text'
+      - name: 'image'
+        label: 'صورة الفعالية'
+        type: 'image'
