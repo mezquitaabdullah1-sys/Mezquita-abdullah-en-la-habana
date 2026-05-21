@@ -8,15 +8,15 @@ media:
     path: 'data/events'
     filename: '{slug}.json'
     fields:
-      - name: 'title'
+      - name: 'title:"KHUTBAH JUMUAAH"'
         label: 'عنوان الفعالية'
         type: 'string'
-      - name: 'date'
+      - name: '"2026-05-22"'
         label: 'تاريخ الفعالية'
         type: 'date'
         options:
           format: 'YYYY-MM-DD'
-      - name: 'description'
+      - name: '¨Khutbah en español y árabe'
         label: 'وصف الفعالية'
         type: 'text'
       - name: 'image'
