@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo - Mezquita Abdullah</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/support.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <span data-lang-key="site_name">Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-lang-key="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-lang-key="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-lang-key="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav active">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-lang-key="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="support-hero">
+        <div class="support-hero-shapes">
+            <div class="shape s1"></div>
+            <div class="shape s2"></div>
+            <div class="shape s3"></div>
+        </div>
+        <div class="container">
+            <div class="support-hero-content">
+                <span class="badge"><i class="fas fa-hands-helping"></i> <span data-lang-key="sup_badge">Servicio comunitario</span></span>
+                <h1 data-lang-key="sup_title">Apoya tu comunidad</h1>
+                <p data-lang-key="sup_subtitle">Hay muchas formas de servir y apoyar la Mezquita Abdullah. Tu tiempo y talento son tan valiosos como cualquier recurso.</p>
+                <div class="hadith-quote">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"El mejor de los humanos es el que más beneficia a la gente"</p>
+                    <span>- Profeta Muhammad ﷺ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support cards -->
+    <section class="support-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="ways_tag">Tu rol</span>
+                <h2 data-lang-key="ways_title">🤝 Formas de apoyar la mezquita</h2>
+                <p data-lang-key="ways_subtitle">Cada hermano y hermana puede contribuir según sus habilidades.</p>
+            </div>
+
+            <div class="support-cards-grid">
+                <!-- Card 1: Teach Quran -->
+                <div class="support-card teach-quran">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0F5C4E"/>
+                                    <stop offset="100%" style="stop-color:#1a8170"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g1)"/>
+                            <circle cx="160" cy="30" r="40" fill="rgba(212,175,55,0.2)"/>
+                            <circle cx="40" cy="120" r="30" fill="rgba(212,175,55,0.15)"/>
+                            <g transform="translate(70,30)">
+                                <rect x="0" y="20" width="60" height="60" rx="4" fill="#D4AF37"/>
+                                <rect x="6" y="26" width="48" height="48" rx="2" fill="#0a4339"/>
+                                <text x="30" y="58" text-anchor="middle" fill="#D4AF37" font-family="Amiri" font-size="20" font-weight="bold">ﷲ</text>
+                                <path d="M30,5 L34,17 L30,15 L26,17 Z" fill="#D4AF37"/>
+                            </g>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-book-quran"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Enseñar Corán</h3>
+                        <p>¿Memorizas Corán? Sé maestro de niños y adultos hambrientos de aprender el Libro de Allah.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20ayudar%20enseñando%20Corán" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Quiero enseñar</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Volunteer time -->
+                <div class="support-card volunteer">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4AF37"/>
+                                    <stop offset="100%" style="stop-color:#b8941f"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g2)"/>
+                            <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.2)"/>
+                            <circle cx="160" cy="100" r="40" fill="rgba(15,92,78,0.2)"/>
+                            <g transform="translate(75,40)">
+                                <path d="M25,10 Q35,0 45,10 L45,30 Q50,25 50,40 L40,50 L10,50 L0,40 Q0,25 5,30 L5,10 Q15,0 25,10 Z" fill="#fff" opacity="0.95"/>
+                                <circle cx="25" cy="60" r="8" fill="#fff" opacity="0.9"/>
+                            </g>
+                        </svg>
+                        <div class="card-icon-bubble gold"><i class="fas fa-hands"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Tu tiempo es oro</h3>
+                        <p>Dona unas horas a la semana en limpieza, organización de eventos o atención a visitantes.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20ser%20voluntario" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Únete como voluntario</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Food -->
+                <div class="support-card food">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ec4899"/>
+                                    <stop offset="100%" style="stop-color:#be185d"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g3)"/>
+                            <circle cx="170" cy="30" r="30" fill="rgba(255,255,255,0.15)"/>
+                            <g transform="translate(60,30)">
+                                <ellipse cx="40" cy="60" rx="40" ry="10" fill="rgba(0,0,0,0.2)"/>
+                                <path d="M10,30 Q40,10 70,30 L70,55 Q40,65 10,55 Z" fill="#fff" opacity="0.95"/>
+                                <circle cx="40" cy="35" r="6" fill="#D4AF37"/>
+                                <circle cx="25" cy="40" r="4" fill="#0F5C4E"/>
+                                <circle cx="55" cy="40" r="4" fill="#0F5C4E"/>
+                                <path d="M5,15 Q5,5 15,5 L15,30 Z" fill="#fff" opacity="0.8"/>
+                                <path d="M65,15 Q75,5 75,15 L75,30 Z" fill="#fff" opacity="0.8"/>
+                            </g>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-utensils"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Patrocinar Iftar</h3>
+                        <p>Patrocina o prepara iftares en Ramadán. Comidas comunitarias que unen corazones.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20patrocinar%20iftar" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Patrocinar comida</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Translation -->
+                <div class="support-card translate">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#06b6d4"/>
+                                    <stop offset="100%" style="stop-color:#0e7490"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g4)"/>
+                            <circle cx="100" cy="70" r="55" fill="rgba(255,255,255,0.15)"/>
+                            <text x="50" y="65" fill="#fff" font-size="28" font-weight="bold" opacity="0.9">A</text>
+                            <text x="80" y="80" fill="#D4AF37" font-size="22" font-family="Amiri" font-weight="bold" opacity="0.95">ع</text>
+                            <text x="110" y="65" fill="#fff" font-size="26" font-weight="bold" opacity="0.9">中</text>
+                            <text x="140" y="80" fill="#fff" font-size="22" opacity="0.9" font-style="italic">é</text>
+                            <path d="M50,95 L150,95" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-language"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Traducción</h3>
+                        <p>¿Hablas árabe, inglés, francés? Ayuda a traducir khutbas, materiales y atender visitantes.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20ayudar%20traduciendo" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Quiero traducir</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Children -->
+                <div class="support-card kids">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b"/>
+                                    <stop offset="100%" style="stop-color:#d97706"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g5)"/>
+                            <circle cx="60" cy="80" r="22" fill="#fff" opacity="0.95"/>
+                            <circle cx="100" cy="70" r="26" fill="#fff" opacity="0.95"/>
+                            <circle cx="140" cy="80" r="22" fill="#fff" opacity="0.95"/>
+                            <circle cx="60" cy="78" r="3" fill="#0F5C4E"/>
+                            <circle cx="60" cy="78" r="3" fill="#0F5C4E" cx="68"/>
+                            <path d="M55,85 Q60,90 65,85" stroke="#0F5C4E" stroke-width="2" fill="none"/>
+                            <path d="M170,25 L175,15 L180,25 L190,30 L180,35 L175,45 L170,35 L160,30 Z" fill="#fff" opacity="0.5"/>
+                        </svg>
+                        <div class="card-icon-bubble gold"><i class="fas fa-child"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Programas Infantiles</h3>
+                        <p>Ayuda con clases para niños, juegos educativos y enseñanza divertida de los pilares del Islam.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20ayudar%20con%20los%20niños" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Quiero participar</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Tech skills -->
+                <div class="support-card tech">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#6d28d9"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g6)"/>
+                            <rect x="50" y="35" width="100" height="65" rx="6" fill="#1a1a1a"/>
+                            <rect x="55" y="40" width="90" height="55" fill="#D4AF37" opacity="0.15"/>
+                            <text x="100" y="73" text-anchor="middle" fill="#D4AF37" font-size="32" font-family="monospace" font-weight="bold">&lt;/&gt;</text>
+                            <rect x="80" y="100" width="40" height="5" fill="#1a1a1a"/>
+                            <rect x="70" y="105" width="60" height="5" fill="#0a0a0a"/>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-laptop-code"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Habilidades Técnicas</h3>
+                        <p>Diseño gráfico, redes sociales, video, IT. Ayúdanos a llegar a más personas con contenido bello.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20puedo%20ayudar%20técnicamente" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Ofrecer mis skills</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Da'wah -->
+                <div class="support-card dawah">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0F5C4E"/>
+                                    <stop offset="100%" style="stop-color:#1a2a4a"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g7)"/>
+                            <g transform="translate(60,30)">
+                                <path d="M40,5 Q50,-5 60,5 L60,55 Q60,65 50,65 L30,65 Q20,65 20,55 L20,5 Q30,-5 40,5 Z" fill="#D4AF37"/>
+                                <circle cx="40" cy="50" r="12" fill="#0F5C4E"/>
+                                <rect x="38" y="35" width="4" height="14" fill="#0F5C4E"/>
+                                <path d="M40,75 L42,85 L40,80 L38,85 Z" fill="#D4AF37"/>
+                                <path d="M20,40 L10,38 L18,42 Z" fill="#fff" opacity="0.5"/>
+                                <path d="M60,40 L70,38 L62,42 Z" fill="#fff" opacity="0.5"/>
+                            </g>
+                            <text x="100" y="125" text-anchor="middle" fill="#fff" font-size="10" opacity="0.7">DA'WAH</text>
+                        </svg>
+                        <div class="card-icon-bubble gold"><i class="fas fa-bullhorn"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Da'wah y Enseñanza</h3>
+                        <p>¿Eres bueno explicando el Islam? Guía a visitantes no musulmanes y nuevos musulmanes.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20participar%20en%20Da'wah" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Sumarme al equipo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 8: Maintenance -->
+                <div class="support-card maintenance">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#475569"/>
+                                    <stop offset="100%" style="stop-color:#1e293b"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g8)"/>
+                            <g transform="translate(70,40)">
+                                <rect x="5" y="10" width="50" height="6" rx="3" fill="#D4AF37" transform="rotate(-20 30 13)"/>
+                                <circle cx="-5" cy="22" r="10" fill="#D4AF37"/>
+                                <rect x="20" y="40" width="6" height="30" rx="3" fill="#fff" opacity="0.9"/>
+                                <path d="M15,40 L40,40 L35,30 L20,30 Z" fill="#fff" opacity="0.9"/>
+                            </g>
+                            <circle cx="170" cy="100" r="15" fill="rgba(212,175,55,0.3)"/>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-tools"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Mantenimiento</h3>
+                        <p>¿Eres electricista, carpintero, pintor o plomero? Tus habilidades son una bendición.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20ofrezco%20mis%20habilidades" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Ofrecer ayuda</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 9: Visit sick -->
+                <div class="support-card visit-sick">
+                    <div class="card-image">
+                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="g9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#dc2626"/>
+                                    <stop offset="100%" style="stop-color:#991b1b"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="140" fill="url(#g9)"/>
+                            <g transform="translate(80,35)">
+                                <path d="M20,5 Q10,-5 0,5 Q-5,15 0,25 L20,45 L40,25 Q45,15 40,5 Q30,-5 20,5 Z" fill="#fff"/>
+                                <path d="M20,12 Q14,8 8,12 Q6,18 8,22 L20,32 L32,22 Q34,18 32,12 Q26,8 20,12 Z" fill="#dc2626"/>
+                            </g>
+                            <circle cx="40" cy="40" r="20" fill="rgba(255,255,255,0.15)"/>
+                            <circle cx="160" cy="100" r="25" fill="rgba(212,175,55,0.2)"/>
+                        </svg>
+                        <div class="card-icon-bubble"><i class="fas fa-heartbeat"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Visitar Enfermos</h3>
+                        <p>Acompaña a miembros de la comunidad enfermos o ancianos. Una visita vale más que oro.</p>
+                        <a href="https://wa.me/5359490936?text=Hola,%20quiero%20visitar%20enfermos" target="_blank" class="card-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Sumarme a las visitas</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hadith motivation -->
+    <section class="motivation-section">
+        <div class="container">
+            <div class="motivation-content">
+                <i class="fas fa-quote-right quote-big"></i>
+                <p>"Quien construya una mezquita para Allah, aunque sea como el nido de un pájaro, Allah le construirá una casa en el Paraíso"</p>
+                <span>- Hadiz auténtico (Ibn Majah)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="support-contact-section">
+        <div class="container">
+            <div class="support-contact-card">
+                <div class="scc-icon"><i class="fas fa-phone-alt"></i></div>
+                <h2>¿Te interesa apoyar?</h2>
+                <p>Para coordinar cualquiera de estas formas de apoyo o conocer más, contacta directamente con el Imam:</p>
+                
+                <div class="scc-phone">
+                    <i class="fas fa-mosque"></i>
+                    <div>
+                        <span>Imam de la Mezquita Abdullah</span>
+                        <strong>+53 5 9490936</strong>
+                    </div>
+                </div>
+
+                <div class="scc-actions">
+                    <a href="https://wa.me/5359490936" target="_blank" class="btn btn-whatsapp btn-large">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+5359490936" class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i>
+                        <span>Llamar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3 data-lang-key="site_name">Mezquita Abdullah</h3>
+                    </div>
+                    <p data-lang-key="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                        <li><i class="fas fa-envelope"></i> mezquitaabdullah1@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

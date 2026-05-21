@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoce el Islam - Mezquita Abdullah</title>
+    <meta name="description" content="Descubre el Islam: respuestas honestas, historias reales de musulmanes y la vida del Profeta Muhammad ﷺ.">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/learn-islam.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Mezquita Abdullah Logo">
+                <span>Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" class="active" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-translate="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-translate="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="learn-hero">
+        <div class="container">
+            <div class="learn-hero-content">
+                <span class="badge"><i class="fas fa-star-and-crescent"></i> <span data-translate="li_badge">Tu viaje espiritual comienza aquí</span></span>
+                <h1 data-translate="li_title">Conoce el Islam</h1>
+                <p data-translate="li_subtitle">Un viaje sereno de descubrimiento, respuestas honestas y conexión con tu Creador. Sin presión, con respeto.</p>
+                <div class="learn-nav-pills">
+                    <a href="#journey" class="nav-pill"><i class="fas fa-route"></i> <span data-translate="li_pill1">De la duda a la certeza</span></a>
+                    <a href="#comparison" class="nav-pill"><i class="fas fa-balance-scale"></i> <span data-translate="li_pill2">Mitos vs. realidad</span></a>
+                    <a href="#stories" class="nav-pill"><i class="fas fa-heart"></i> <span data-translate="li_pill3">¿Por qué eligieron el Islam?</span></a>
+                    <a href="#sky" class="nav-pill"><i class="fas fa-cloud"></i> <span data-translate="li_pill4">3 preguntas al cielo</span></a>
+                    <a href="#prophet" class="nav-pill"><i class="fas fa-mosque"></i> <span data-translate="li_pill5">Profeta de la Misericordia</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Journey from Doubt to Certainty -->
+    <section class="journey-cards" id="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="j_tag">Rihla espiritual</span>
+                <h2 data-translate="j_title">🌱 De la duda a la certeza</h2>
+                <p data-translate="j_subtitle">Las preguntas más importantes de tu vida. Respondidas con calma y sabiduría.</p>
+            </div>
+
+            <div class="big-questions-grid">
+                <div class="big-question-card" onclick="this.classList.toggle('open')">
+                    <div class="bq-front">
+                        <div class="bq-icon-circle"><i class="fas fa-question-circle"></i></div>
+                        <h3 data-translate="bq1_q">¿Por qué Allah nos creó?</h3>
+                        <span class="bq-cta" data-translate="bq_tap">Toca para descubrir →</span>
+                    </div>
+                    <div class="bq-back">
+                        <h3 data-translate="bq1_q">¿Por qué Allah nos creó?</h3>
+                        <p data-translate="bq1_a">Allah nos creó para conocerle, adorarle y conocer Su belleza. Dice en el Corán: <em>"No he creado a los genios y a los humanos sino para que Me adoren"</em> (51:56). No somos accidentes cósmicos: somos seres con propósito, dignidad y un destino eterno. La adoración aquí no es solo rezar, sino vivir cada momento con conciencia de Allah.</p>
+                        <div class="bq-verse">
+                            <i class="fas fa-quran"></i>
+                            <span data-translate="bq1_verse">"He creado todo con un propósito" - Corán 30:8</span>
+                        </div>
+                        <div class="bq-icons">
+                            <div class="bq-icon-item"><i class="fas fa-infinity"></i><span data-translate="bq1_i1">Propósito eterno</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-heart"></i><span data-translate="bq1_i2">Amor divino</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-star"></i><span data-translate="bq1_i3">Destino noble</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="big-question-card" onclick="this.classList.toggle('open')">
+                    <div class="bq-front">
+                        <div class="bq-icon-circle"><i class="fas fa-book-quran"></i></div>
+                        <h3 data-translate="bq2_q">¿Cómo sabemos que el Corán es de Allah?</h3>
+                        <span class="bq-cta" data-translate="bq_tap">Toca para descubrir →</span>
+                    </div>
+                    <div class="bq-back">
+                        <h3 data-translate="bq2_q">¿Cómo sabemos que el Corán es de Allah?</h3>
+                        <p data-translate="bq2_a">El Corán contiene 4 evidencias claras: (1) Su <strong>desafío literario</strong> sigue sin igualar tras 1.400 años; (2) <strong>Datos científicos</strong> que solo se descubrieron siglos después (embriología, expansión del universo); (3) <strong>Preservación perfecta</strong>: ni una letra ha cambiado; (4) <strong>Profecías cumplidas</strong> y narraciones históricas exactas. Un hombre analfabeto del siglo VII no pudo escribir esto.</p>
+                        <div class="bq-icons">
+                            <div class="bq-icon-item"><i class="fas fa-feather"></i><span data-translate="bq2_i1">Inimitable</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-atom"></i><span data-translate="bq2_i2">Ciencia exacta</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-shield-alt"></i><span data-translate="bq2_i3">Preservado</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="big-question-card" onclick="this.classList.toggle('open')">
+                    <div class="bq-front">
+                        <div class="bq-icon-circle"><i class="fas fa-female"></i></div>
+                        <h3 data-translate="bq3_q">¿Qué ofrece el Islam a la mujer?</h3>
+                        <span class="bq-cta" data-translate="bq_tap">Toca para descubrir →</span>
+                    </div>
+                    <div class="bq-back">
+                        <h3 data-translate="bq3_q">¿Qué ofrece el Islam a la mujer?</h3>
+                        <p data-translate="bq3_a">El Islam dio a la mujer derechos que Occidente le reconoció siglos después: derecho a heredar, a poseer propiedad, a elegir esposo, a divorciarse, al estudio, al trabajo y a guardar su dinero (sin obligación de gastarlo en el hogar). Es honrada como hija (Paraíso bajo sus pies como madre), como esposa y como ser humano. El hijab no es opresión: es dignidad y libertad de ser valorada por su mente.</p>
+                        <div class="bq-icons">
+                            <div class="bq-icon-item"><i class="fas fa-crown"></i><span data-translate="bq3_i1">Dignidad</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-graduation-cap"></i><span data-translate="bq3_i2">Educación</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-balance-scale"></i><span data-translate="bq3_i3">Derechos</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="big-question-card" onclick="this.classList.toggle('open')">
+                    <div class="bq-front">
+                        <div class="bq-icon-circle"><i class="fas fa-praying-hands"></i></div>
+                        <h3 data-translate="bq4_q">¿Cuál es el sentido de la vida?</h3>
+                        <span class="bq-cta" data-translate="bq_tap">Toca para descubrir →</span>
+                    </div>
+                    <div class="bq-back">
+                        <h3 data-translate="bq4_q">¿Cuál es el sentido de la vida?</h3>
+                        <p data-translate="bq4_a">Esta vida es una prueba breve, un viaje cuyo destino es la eternidad. Allah dice: <em>"Quien ha creado la muerte y la vida para probaros y ver quién de vosotros obra mejor"</em> (67:2). Cada acto bueno se multiplica, cada paciencia da fruto eterno. La verdadera felicidad no está en consumir, sino en servir a Allah y a Sus criaturas.</p>
+                        <div class="bq-icons">
+                            <div class="bq-icon-item"><i class="fas fa-seedling"></i><span data-translate="bq4_i1">Prueba breve</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-mountain"></i><span data-translate="bq4_i2">Crecimiento</span></div>
+                            <div class="bq-icon-item"><i class="fas fa-door-open"></i><span data-translate="bq4_i3">Eternidad</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Smart Comparison: Myths vs Truth -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="cm_tag">Aclaremos</span>
+                <h2 data-translate="cm_title">⚖️ Mitos vs. Realidad</h2>
+                <p data-translate="cm_subtitle">Separamos los rumores de la verdad. Con fuentes y respeto.</p>
+            </div>
+
+            <div class="myth-truth-grid">
+                <div class="mt-card">
+                    <div class="mt-myth">
+                        <span class="mt-label myth"><i class="fas fa-times-circle"></i> <span data-translate="myth_label">Mito común</span></span>
+                        <p data-translate="myth1">"El Islam es una religión de violencia"</p>
+                    </div>
+                    <div class="mt-truth">
+                        <span class="mt-label truth"><i class="fas fa-check-circle"></i> <span data-translate="truth_label">La verdad</span></span>
+                        <p data-translate="truth1">La palabra "Islam" significa <strong>paz y sumisión</strong>. El Corán dice: "Quien mate a una persona... es como si matara a toda la humanidad" (5:32). Los 1.900 millones de musulmanes en el mundo viven en paz; las acciones de extremistas no representan al Islam, así como las acciones de algunos no representan a sus religiones.</p>
+                    </div>
+                    <div class="mt-share">
+                        <span data-translate="share_truth">Compartir esta verdad:</span>
+                        <a href="https://twitter.com/intent/tweet?text=El%20Islam%20significa%20paz" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mezquitaabdullah.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/?text=El%20Islam%20significa%20paz%20-%20Mezquita%20Abdullah" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="mt-card">
+                    <div class="mt-myth">
+                        <span class="mt-label myth"><i class="fas fa-times-circle"></i> <span data-translate="myth_label">Mito común</span></span>
+                        <p data-translate="myth2">"El Islam oprime a la mujer"</p>
+                    </div>
+                    <div class="mt-truth">
+                        <span class="mt-label truth"><i class="fas fa-check-circle"></i> <span data-translate="truth_label">La verdad</span></span>
+                        <p data-translate="truth2">El Islam dio derechos a la mujer en el siglo VII que Europa le reconoció en el siglo XX: herencia, propiedad, divorcio, educación y voto. El Profeta ﷺ dijo: "El Paraíso está bajo los pies de las madres". El hijab es libertad, no opresión: ser juzgada por la mente y no por el cuerpo.</p>
+                    </div>
+                    <div class="mt-share">
+                        <span data-translate="share_truth">Compartir esta verdad:</span>
+                        <a href="https://twitter.com/intent/tweet?text=El%20Islam%20honra%20a%20la%20mujer" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mezquitaabdullah.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/?text=El%20Islam%20honra%20a%20la%20mujer%20-%20Mezquita%20Abdullah" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="mt-card">
+                    <div class="mt-myth">
+                        <span class="mt-label myth"><i class="fas fa-times-circle"></i> <span data-translate="myth_label">Mito común</span></span>
+                        <p data-translate="myth3">"Los musulmanes adoran a un dios diferente"</p>
+                    </div>
+                    <div class="mt-truth">
+                        <span class="mt-label truth"><i class="fas fa-check-circle"></i> <span data-translate="truth_label">La verdad</span></span>
+                        <p data-translate="truth3">Allah es el mismo Dios de Abraham, Moisés y Jesús. "Allah" es simplemente la palabra árabe para "Dios" — los cristianos árabes también dicen "Allah". Es el único Dios, Creador del cielo y la tierra, mencionado en el Corán, la Torá y la Biblia.</p>
+                    </div>
+                    <div class="mt-share">
+                        <span data-translate="share_truth">Compartir esta verdad:</span>
+                        <a href="https://twitter.com/intent/tweet?text=Allah%20es%20el%20mismo%20Dios%20de%20Abraham" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mezquitaabdullah.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/?text=Allah%20es%20el%20mismo%20Dios%20-%20Mezquita%20Abdullah" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="mt-card">
+                    <div class="mt-myth">
+                        <span class="mt-label myth"><i class="fas fa-times-circle"></i> <span data-translate="myth_label">Mito común</span></span>
+                        <p data-translate="myth4">"El Islam está contra la ciencia"</p>
+                    </div>
+                    <div class="mt-truth">
+                        <span class="mt-label truth"><i class="fas fa-check-circle"></i> <span data-translate="truth_label">La verdad</span></span>
+                        <p data-translate="truth4">La primera palabra del Corán es <strong>"Lee"</strong>. Los musulmanes inventaron el álgebra (Al-Khwarizmi), la óptica (Ibn al-Haytham), la medicina moderna (Ibn Sina), la cirugía (Al-Zahrawi). Buscar el conocimiento es un deber religioso. Más de 1.000 versos del Corán hablan de la naturaleza y la razón.</p>
+                    </div>
+                    <div class="mt-share">
+                        <span data-translate="share_truth">Compartir esta verdad:</span>
+                        <a href="https://twitter.com/intent/tweet?text=El%20Islam%20y%20la%20ciencia%20van%20de%20la%20mano" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://mezquitaabdullah.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/?text=El%20Islam%20impulsa%20la%20ciencia%20-%20Mezquita%20Abdullah" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Real Stories - Why did they convert? -->
+    <section class="stories-section" id="stories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="st_tag">Historias reales</span>
+                <h2 data-translate="st_title">💚 ¿Por qué eligieron el Islam?</h2>
+                <p data-translate="st_subtitle">Testimonios verdaderos de personas que encontraron su hogar espiritual.</p>
+            </div>
+
+            <div class="stories-filter">
+                <button class="filter-btn active" data-filter="all" data-translate="filter_all">Todos</button>
+                <button class="filter-btn" data-filter="latam" data-translate="filter_latam">América Latina</button>
+                <button class="filter-btn" data-filter="europe" data-translate="filter_europe">Europa</button>
+                <button class="filter-btn" data-filter="usa" data-translate="filter_usa">EE.UU.</button>
+                <button class="filter-btn" data-filter="professional" data-translate="filter_pro">Profesionales</button>
+            </div>
+
+            <div class="stories-carousel" id="storiesCarousel">
+                <button class="carousel-btn prev" id="storyPrev"><i class="fas fa-chevron-left"></i></button>
+                <div class="stories-track" id="storiesTrack">
+                    <div class="story-card" data-region="latam" data-cat="professional">
+                        <div class="story-avatar">👨‍⚕️</div>
+                        <div class="story-content">
+                            <span class="story-meta">🇲🇽 México · <span data-translate="story_doctor">Médico</span></span>
+                            <h3 data-translate="story1_name">Carlos → Karim</h3>
+                            <p data-translate="story1_text">"Después de leer el Corán por curiosidad científica, descubrí coherencia perfecta con embriología moderna. Pero lo que tocó mi corazón fue saber que Allah me amaba más que 70 madres."</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" data-region="europe" data-cat="professional">
+                        <div class="story-avatar">👩‍🎓</div>
+                        <div class="story-content">
+                            <span class="story-meta">🇪🇸 España · <span data-translate="story_teacher">Profesora</span></span>
+                            <h3 data-translate="story2_name">María → Maryam</h3>
+                            <p data-translate="story2_text">"Buscaba paz interior durante años. El Islam me dio una conexión directa con Dios, sin intermediarios. Hoy me siento libre, no oprimida. El hijab es mi corona, no mi cadena."</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" data-region="usa" data-cat="professional">
+                        <div class="story-avatar">👨‍💼</div>
+                        <div class="story-content">
+                            <span class="story-meta">🇺🇸 USA · <span data-translate="story_engineer">Ingeniero</span></span>
+                            <h3 data-translate="story3_name">John → Yusuf</h3>
+                            <p data-translate="story3_text">"Crecí ateo. La idea de un creador me parecía absurda hasta que un colega musulmán me invitó a leer sobre el orden del universo. La precisión matemática me llevó a Allah."</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" data-region="latam" data-cat="general">
+                        <div class="story-avatar">👩‍🏫</div>
+                        <div class="story-content">
+                            <span class="story-meta">🇨🇺 Cuba · <span data-translate="story_artist">Artista</span></span>
+                            <h3 data-translate="story4_name">Ana → Aisha</h3>
+                            <p data-translate="story4_text">"En La Habana encontré la Mezquita Abdullah por casualidad. Las hermanas me recibieron como familia. Hoy soy musulmana, esposa y madre orgullosa. Aquí encontré mi hogar."</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" data-region="europe" data-cat="general">
+                        <div class="story-avatar">🧑‍🎨</div>
+                        <div class="story-content">
+                            <span class="story-meta">🇫🇷 Francia · <span data-translate="story_writer">Escritor</span></span>
+                            <h3 data-translate="story5_name">Pierre → Bilal</h3>
+                            <p data-translate="story5_text">"Estudié todas las religiones. Solo el Islam respondió con coherencia a las grandes preguntas: ¿Por qué existo? ¿Por qué hay sufrimiento? Encontré certeza y paz."</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" id="storyNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 3 Questions to the Sky -->
+    <section class="sky-questions" id="sky">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag light" data-translate="sk_tag">Experiencia interactiva</span>
+                <h2 data-translate="sk_title">☁️ 3 preguntas al cielo</h2>
+                <p data-translate="sk_subtitle">Elige una pregunta existencial. Recibe una respuesta del Corán.</p>
+            </div>
+
+            <div class="sky-game" id="skyGame">
+                <div class="sky-step active" id="skyStep1">
+                    <h3 data-translate="sk_step1">Paso 1: Elige una pregunta que te inquieta</h3>
+                    <div class="sky-choices">
+                        <button class="sky-choice" data-q="identity">
+                            <i class="fas fa-user-circle"></i>
+                            <h4 data-translate="sk_q1">¿Quién soy yo?</h4>
+                            <p data-translate="sk_q1_desc">El sentido de mi existencia</p>
+                        </button>
+                        <button class="sky-choice" data-q="pain">
+                            <i class="fas fa-heart-broken"></i>
+                            <h4 data-translate="sk_q2">¿Por qué sufro?</h4>
+                            <p data-translate="sk_q2_desc">El sentido del dolor</p>
+                        </button>
+                        <button class="sky-choice" data-q="death">
+                            <i class="fas fa-cloud"></i>
+                            <h4 data-translate="sk_q3">¿Qué hay después de la muerte?</h4>
+                            <p data-translate="sk_q3_desc">El destino final</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sky-step" id="skyStep2">
+                    <div class="sky-answer">
+                        <h3 id="skyAnswerTitle">--</h3>
+                        <div class="sky-verse-card">
+                            <i class="fas fa-quote-right"></i>
+                            <p class="verse-ar" id="skyVerseAr">--</p>
+                            <p class="verse-trans" id="skyVerseTrans">--</p>
+                            <span class="verse-ref" id="skyVerseRef">--</span>
+                        </div>
+                        <p class="sky-explanation" id="skyExplanation">--</p>
+                        <div class="sky-actions">
+                            <a href="contact.html" class="btn btn-primary">
+                                <i class="fas fa-comments"></i>
+                                <span data-translate="sk_talk">Hablar con un guía</span>
+                            </a>
+                            <button class="btn btn-outline" onclick="resetSky()">
+                                <i class="fas fa-redo"></i>
+                                <span data-translate="sk_again">Otra pregunta</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Prophet of Mercy -->
+    <section class="prophet-section" id="prophet">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="pr_tag">Sirat al-Nabi</span>
+                <h2 data-translate="pr_title">🌹 El Profeta de la Misericordia ﷺ</h2>
+                <p data-translate="pr_subtitle">Conoce al hombre que cambió el mundo con compasión, no con espada.</p>
+            </div>
+
+            <div class="prophet-timeline">
+                <div class="prophet-line"></div>
+
+                <div class="prophet-event left">
+                    <div class="prophet-icon"><i class="fas fa-dove"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag tolerance" data-translate="pr_tag_tolerance">Tolerancia</span>
+                        <h3 data-translate="pr_e1_title">"No hay coacción en la religión"</h3>
+                        <p data-translate="pr_e1_desc">El Profeta ﷺ vivió rodeado de cristianos, judíos y paganos. Firmó la Carta de Medina garantizando libertad religiosa total. Nunca obligó a nadie a aceptar el Islam.</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event right">
+                    <div class="prophet-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag compassion" data-translate="pr_tag_compassion">Compasión</span>
+                        <h3 data-translate="pr_e2_title">Perdonó a los que lo apedrearon</h3>
+                        <p data-translate="pr_e2_desc">En Taif, los niños le lanzaron piedras hasta sangrar. Cuando un ángel le ofreció destruir la ciudad, él respondió: "No. Pero ruego que de su descendencia salgan creyentes". Esta es la misericordia.</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event left">
+                    <div class="prophet-icon"><i class="fas fa-female"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag women" data-translate="pr_tag_women">Mujeres</span>
+                        <h3 data-translate="pr_e3_title">Liberó a las mujeres</h3>
+                        <p data-translate="pr_e3_desc">En una Arabia que enterraba a las niñas vivas, declaró: "El Paraíso está bajo los pies de las madres". Dio a las mujeres derecho a heredar, divorciarse y trabajar. 1.300 años antes que Europa.</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event right">
+                    <div class="prophet-icon"><i class="fas fa-child"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag children" data-translate="pr_tag_children">Niños</span>
+                        <h3 data-translate="pr_e4_title">Amó profundamente a los niños</h3>
+                        <p data-translate="pr_e4_desc">Acortaba sus oraciones al oír a un bebé llorar. Cargaba a sus nietos sobre los hombros durante la oración. Dijo: "No es de los nuestros quien no es compasivo con los pequeños".</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event left">
+                    <div class="prophet-icon"><i class="fas fa-paw"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag animals" data-translate="pr_tag_animals">Animales</span>
+                        <h3 data-translate="pr_e5_title">Pionero del bienestar animal</h3>
+                        <p data-translate="pr_e5_desc">"Una mujer entró al Infierno por encerrar a un gato sin alimentarlo". Prohibió la caza por deporte, el maltrato a animales y mandó afilar el cuchillo antes del sacrificio para no causar dolor.</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event right">
+                    <div class="prophet-icon"><i class="fas fa-tree"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag environment" data-translate="pr_tag_environment">Medio Ambiente</span>
+                        <h3 data-translate="pr_e6_title">Defensor del medio ambiente</h3>
+                        <p data-translate="pr_e6_desc">"Si llega el Día del Juicio y tienes una semilla en la mano, plántala". Prohibió talar árboles innecesariamente, ensuciar el agua y desperdiciar recursos, incluso al hacer wudu en un río.</p>
+                    </div>
+                </div>
+
+                <div class="prophet-event left">
+                    <div class="prophet-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="prophet-content">
+                        <span class="prophet-tag enemies" data-translate="pr_tag_enemies">Perdón</span>
+                        <h3 data-translate="pr_e7_title">El día de la conquista de La Meca</h3>
+                        <p data-translate="pr_e7_desc">Entró victorioso a la ciudad que lo había expulsado, torturado y matado a sus seres queridos. Su sentencia: "Hoy no hay reproche para vosotros. Idos, sois libres". Perdonó a todos sus enemigos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Enter Islam -->
+    <section class="enter-islam-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="ei_tag">El camino</span>
+                <h2 data-translate="ei_title">🌟 ¿Cómo entrar al Islam?</h2>
+                <p data-translate="ei_subtitle">Es simple, hermoso y abre las puertas de tu nueva vida espiritual.</p>
+            </div>
+
+            <div class="enter-steps">
+                <div class="enter-step">
+                    <div class="enter-number">1</div>
+                    <div class="enter-content">
+                        <i class="fas fa-comment-dots enter-icon"></i>
+                        <h3 data-translate="ei_s1_title">Pronuncia la Shahada (testimonio de fe)</h3>
+                        <p data-translate="ei_s1_desc">Es la única declaración necesaria. Con sinceridad de corazón, di:</p>
+                        <div class="shahada-card">
+                            <p class="shahada-ar">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ</p>
+                            <p class="shahada-trans">"Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah"</p>
+                            <p class="shahada-es" data-translate="ei_shahada_es">"Atestiguo que no hay más dios que Allah, y atestiguo que Muhammad es el mensajero de Allah"</p>
+                        </div>
+                        <p class="enter-note" data-translate="ei_s1_note">✨ ¡En ese momento te conviertes en musulmán! Todos tus pecados anteriores son perdonados.</p>
+                    </div>
+                </div>
+
+                <div class="enter-step">
+                    <div class="enter-number">2</div>
+                    <div class="enter-content">
+                        <i class="fas fa-shower enter-icon"></i>
+                        <h3 data-translate="ei_s2_title">Realiza el ghusl (baño ritual)</h3>
+                        <p data-translate="ei_s2_desc">Una ducha completa simboliza tu nueva vida espiritual, libre de pecados. Es recomendado, no obligatorio para entrar al Islam.</p>
+                        <a href="https://youtu.be/yFJj2uZjE6o?si=2caSNj57La9t79SC" target="_blank" class="enter-video">
+                            <i class="fab fa-youtube"></i>
+                            <span data-translate="ei_watch">Ver video tutorial</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="enter-step">
+                    <div class="enter-number">3</div>
+                    <div class="enter-content">
+                        <i class="fas fa-praying-hands enter-icon"></i>
+                        <h3 data-translate="ei_s3_title">Aprende y comienza a rezar</h3>
+                        <p data-translate="ei_s3_desc">Las 5 oraciones diarias son tu conexión directa con Allah. Aprende paso a paso:</p>
+                        <div class="enter-resources">
+                            <a href="new-muslims.html" class="enter-video">
+                                <i class="fas fa-arrow-right"></i>
+                                <span data-translate="ei_full_guide">Guía completa para nuevos musulmanes</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="enter-step">
+                    <div class="enter-number">4</div>
+                    <div class="enter-content">
+                        <i class="fas fa-mosque enter-icon"></i>
+                        <h3 data-translate="ei_s4_title">Visita la mezquita y conoce a tu comunidad</h3>
+                        <p data-translate="ei_s4_desc">No estás solo. La Mezquita Abdullah te recibirá con los brazos abiertos. Habrá hermanos y hermanas para guiarte.</p>
+                        <div class="enter-resources">
+                            <a href="https://wa.me/5359490936" target="_blank" class="enter-video whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-translate="ei_contact_wa">Contactar al imam por WhatsApp</span>
+                            </a>
+                            <a href="visit.html" class="enter-video">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-translate="ei_visit">Cómo llegar a la mezquita</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enter-cta">
+                <h3 data-translate="ei_cta_title">¿Listo para tomar este paso?</h3>
+                <p data-translate="ei_cta_desc">Estamos aquí para acompañarte. Sin presión, con todo el amor del mundo.</p>
+                <div class="enter-cta-buttons">
+                    <a href="https://wa.me/5359490936?text=Hola,%20me%20interesa%20aceptar%20el%20Islam" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-translate="ei_cta_btn">Contactar al imam ahora</span>
+                    </a>
+                    <a href="new-muslims.html" class="btn btn-gold btn-large">
+                        <i class="fas fa-star-and-crescent"></i>
+                        <span data-translate="ei_cta_btn2">Ya soy nuevo musulmán</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3>Mezquita Abdullah</h3>
+                    </div>
+                    <p data-translate="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 59490936</li>
+                        <li><i class="fas fa-envelope"></i> mezquitaabdullah1@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/learn-islam.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
