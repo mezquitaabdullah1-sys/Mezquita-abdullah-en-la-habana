@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezquita Abdullah - La Habana, Cuba</title>
+    <meta name="description" content="Mezquita Abdullah en La Habana Vieja, Cuba. Horarios de oración, eventos, y centro islámico.">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Prayer bar (top) -->
+    <div class="prayer-bar" id="prayerBar">
+        <div class="container prayer-bar-content">
+            <div class="prayer-bar-left">
+                <i class="fas fa-mosque"></i>
+                <span data-lang-key="prayer_bar_label">Próxima oración:</span>
+                <strong id="nextPrayerName">Dhuhr</strong>
+                <span id="nextPrayerTime">12:30</span>
+                <span class="countdown" id="prayerCountdown">en 2h 15m</span>
+            </div>
+            <div class="prayer-bar-right">
+                <a href="prayer-times.html" data-lang-key="prayer_bar_link">Ver todos los horarios</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Mezquita Abdullah Logo">
+                <span data-lang-key="site_name">Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-lang-key="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-lang-key="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-lang-key="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-lang-key="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <img src="images/mosque-exterior.jpg" alt="Mezquita Abdullah" class="hero-bg">
+        <div class="hero-content">
+            <div class="hero-welcome">
+                <span class="welcome-word active">أهلاً وسهلاً</span>
+                <span class="welcome-word">Bienvenidos</span>
+                <span class="welcome-word">Welcome</span>
+                <span class="welcome-word">Bienvenue</span>
+            </div>
+            <h1 data-lang-key="hero_title">Mezquita Abdullah</h1>
+            <p class="hero-location"><i class="fas fa-map-marker-alt"></i> <span data-lang-key="hero_location">Habana Vieja, La Habana, Cuba</span></p>
+            <p data-lang-key="hero_subtitle">El primer y único centro islámico en Cuba.</p>
+            <div class="hero-buttons">
+                <a href="learn-islam.html" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i>
+                    <span data-lang-key="hero_btn1">Conoce el Islam</span>
+                </a>
+                <a href="new-muslims.html" class="btn btn-gold">
+                    <i class="fas fa-star-and-crescent"></i>
+                    <span data-lang-key="hero_btn2">Nuevos Musulmanes</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer times horizontal strip -->
+    <section class="prayer-strip">
+        <div class="container">
+            <div class="prayer-strip-header">
+                <div class="prayer-strip-title">
+                    <i class="fas fa-mosque"></i>
+                    <div>
+                        <h3 data-lang-key="today_prayers">Horarios de oración de hoy</h3>
+                        <p id="prayerStripDate" class="prayer-strip-date">--</p>
+                    </div>
+                </div>
+                <a href="prayer-times.html" class="prayer-strip-link">
+                    <span data-lang-key="prayer_bar_link">Ver todos los horarios</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="prayer-strip-grid" id="prayerStripGrid">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-mosque"></i></div>
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label" data-lang-key="stat1">Mezquita en Cuba</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" data-target="3000">0</div>
+                    <div class="stat-label" data-lang-key="stat2">Miembros de la comunidad</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-book-quran"></i></div>
+                    <div class="stat-number" data-target="80">0</div>
+                    <div class="stat-label" data-lang-key="stat3">Estudiantes de Corán</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="stat-number" data-target="11">0</div>
+                    <div class="stat-label" data-lang-key="stat4">Años de servicio (desde 2015)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Carousel (Diyanet-inspired) -->
+    <section class="events-carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="events_tag">Próximos eventos</span>
+                <h2 data-lang-key="events_title">Eventos y Actividades</h2>
+                <p data-lang-key="events_subtitle">No te pierdas las actividades de tu comunidad</p>
+            </div>
+
+            <div class="events-carousel-wrapper">
+                <button class="carousel-arrow prev" id="eventsPrev"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="events-carousel" id="eventsCarousel">
+                    <div class="events-track" id="eventsTrack">
+                        <!-- Event 1 -->
+                        <article class="event-slide">
+                            <div class="event-image">
+                                <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ev1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#0F5C4E"/>
+                                            <stop offset="100%" style="stop-color:#1a2a4a"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="220" fill="url(#ev1)"/>
+                                    <circle cx="320" cy="60" r="50" fill="rgba(212,175,55,0.2)"/>
+                                    <g transform="translate(140,40)">
+                                        <rect x="20" y="40" width="80" height="100" rx="4" fill="#D4AF37"/>
+                                        <rect x="28" y="48" width="64" height="84" rx="2" fill="#0a4339"/>
+                                        <text x="60" y="98" text-anchor="middle" fill="#D4AF37" font-family="Amiri" font-size="28" font-weight="bold">ﷲ</text>
+                                        <path d="M60,20 L67,38 L60,35 L53,38 Z" fill="#D4AF37"/>
+                                    </g>
+                                </svg>
+                                <div class="event-date-tag">
+                                    <span class="ev-day">22</span>
+                                    <span class="ev-month">May</span>
+                                </div>
+                            </div>
+                            <div class="event-slide-body">
+                                <span class="event-category"><i class="fas fa-mosque"></i> Yumu'ah</span>
+                                <h3>Oración del Yumu'ah</h3>
+                                <p class="event-meta"><i class="far fa-clock"></i> 13:00 · <i class="fas fa-language"></i> Khutbah en español y árabe</p>
+                                <p>La oración del viernes es la más importante de la semana. Khutbah bilingüe seguida de la Salat.</p>
+                                <a href="events.html" class="event-btn" data-lang-key="events_register">Más detalles</a>
+                            </div>
+                        </article>
+
+                        <!-- Event 2 -->
+                        <article class="event-slide">
+                            <div class="event-image">
+                                <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ev2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#D4AF37"/>
+                                            <stop offset="100%" style="stop-color:#b8941f"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="220" fill="url(#ev2)"/>
+                                    <circle cx="80" cy="60" r="40" fill="rgba(255,255,255,0.2)"/>
+                                    <g transform="translate(170,60)">
+                                        <ellipse cx="30" cy="60" rx="50" ry="10" fill="rgba(0,0,0,0.3)"/>
+                                        <path d="M-10,30 Q30,5 70,30 L70,55 Q30,70 -10,55 Z" fill="#fff" opacity="0.95"/>
+                                        <circle cx="30" cy="40" r="6" fill="#0F5C4E"/>
+                                        <circle cx="10" cy="42" r="4" fill="#0F5C4E"/>
+                                        <circle cx="50" cy="42" r="4" fill="#0F5C4E"/>
+                                    </g>
+                                </svg>
+                                <div class="event-date-tag">
+                                    <span class="ev-day">30</span>
+                                    <span class="ev-month">May</span>
+                                </div>
+                            </div>
+                            <div class="event-slide-body">
+                                <span class="event-category"><i class="fas fa-utensils"></i> Iftar</span>
+                                <h3>Iftar Comunitario Gratuito</h3>
+                                <p class="event-meta"><i class="far fa-clock"></i> Maghrib · <i class="fas fa-users"></i> Toda la comunidad</p>
+                                <p>Cena de ruptura del ayuno abierta a todos. Tradición que une nuestra familia musulmana.</p>
+                                <a href="events.html" class="event-btn" data-lang-key="events_register">Más detalles</a>
+                            </div>
+                        </article>
+
+                        <!-- Event 3 -->
+                        <article class="event-slide">
+                            <div class="event-image">
+                                <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ev3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                            <stop offset="100%" style="stop-color:#6d28d9"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="220" fill="url(#ev3)"/>
+                                    <circle cx="320" cy="160" r="45" fill="rgba(212,175,55,0.2)"/>
+                                    <g transform="translate(170,55)">
+                                        <circle cx="30" cy="40" r="22" fill="#fff" opacity="0.95"/>
+                                        <text x="30" y="48" text-anchor="middle" fill="#0F5C4E" font-size="22" font-weight="bold">?</text>
+                                        <path d="M30,75 L34,90 L30,85 L26,90 Z" fill="#D4AF37"/>
+                                    </g>
+                                </svg>
+                                <div class="event-date-tag">
+                                    <span class="ev-day">02</span>
+                                    <span class="ev-month">Jun</span>
+                                </div>
+                            </div>
+                            <div class="event-slide-body">
+                                <span class="event-category"><i class="fas fa-graduation-cap"></i> Conferencia</span>
+                                <h3>Visita del Sheikh Dr. Ahmed</h3>
+                                <p class="event-meta"><i class="far fa-clock"></i> 19:00 · <i class="fas fa-globe"></i> Para todos</p>
+                                <p>Conferencia especial sobre "Los musulmanes en América Latina". Abierta al público general.</p>
+                                <a href="events.html" class="event-btn" data-lang-key="events_register">Más detalles</a>
+                            </div>
+                        </article>
+
+                        <!-- Event 4 -->
+                        <article class="event-slide">
+                            <div class="event-image">
+                                <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ev4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#f59e0b"/>
+                                            <stop offset="100%" style="stop-color:#d97706"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="220" fill="url(#ev4)"/>
+                                    <g transform="translate(150,60)">
+                                        <circle cx="20" cy="40" r="18" fill="#fff" opacity="0.95"/>
+                                        <circle cx="55" cy="35" r="20" fill="#fff" opacity="0.95"/>
+                                        <circle cx="90" cy="40" r="18" fill="#fff" opacity="0.95"/>
+                                        <path d="M5,80 Q55,95 105,80" stroke="#fff" stroke-width="3" fill="none" opacity="0.7"/>
+                                    </g>
+                                </svg>
+                                <div class="event-date-tag">
+                                    <span class="ev-day">19</span>
+                                    <span class="ev-month">May</span>
+                                </div>
+                            </div>
+                            <div class="event-slide-body">
+                                <span class="event-category"><i class="fas fa-child"></i> Niños</span>
+                                <h3>Clase de Tahfiz para Niños</h3>
+                                <p class="event-meta"><i class="far fa-clock"></i> 16:00-17:30 · <i class="fas fa-user"></i> Edad: 5-12</p>
+                                <p>Memorización del Corán para los más pequeños. Programa estructurado y divertido.</p>
+                                <a href="events.html" class="event-btn" data-lang-key="events_register">Más detalles</a>
+                            </div>
+                        </article>
+
+                        <!-- Event 5 -->
+                        <article class="event-slide">
+                            <div class="event-image">
+                                <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ev5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#0F5C4E"/>
+                                            <stop offset="100%" style="stop-color:#0a4339"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="220" fill="url(#ev5)"/>
+                                    <circle cx="200" cy="110" r="60" fill="rgba(212,175,55,0.2)"/>
+                                    <g transform="translate(165,70)">
+                                        <path d="M5,40 L35,5 L65,40 L60,80 L10,80 Z" fill="#D4AF37"/>
+                                        <rect x="25" y="50" width="20" height="30" fill="#0a4339"/>
+                                        <circle cx="35" cy="20" r="3" fill="#0a4339"/>
+                                    </g>
+                                </svg>
+                                <div class="event-date-tag">
+                                    <span class="ev-day">24</span>
+                                    <span class="ev-month">May</span>
+                                </div>
+                            </div>
+                            <div class="event-slide-body">
+                                <span class="event-category"><i class="fas fa-door-open"></i> Open Day</span>
+                                <h3>Día de Puertas Abiertas</h3>
+                                <p class="event-meta"><i class="far fa-clock"></i> 10:00-17:00 · <i class="fas fa-heart"></i> Para no musulmanes</p>
+                                <p>Recibimos a curiosos y vecinos. Té árabe, tour guiado y respuestas honestas.</p>
+                                <a href="events.html" class="event-btn" data-lang-key="events_register">Más detalles</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow next" id="eventsNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="carousel-dots" id="eventsDots"></div>
+
+            <div class="events-cta-bottom">
+                <a href="events.html" class="btn btn-outline">
+                    <span data-lang-key="view_all_events">Ver todos los eventos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic CMS Events (from Pages CMS) -->
+    <section class="cms-events-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="cms_events_tag">Agenda dinámica</span>
+                <h2 data-lang-key="cms_events_title"><i class="fas fa-calendar-days"></i> Próximas actividades</h2>
+                <p data-lang-key="cms_events_subtitle">Editable desde Pages CMS — los administradores pueden actualizar esta agenda en cualquier momento.</p>
+            </div>
+            <div class="cms-events-grid" id="cmsEventsGrid">
+                <!-- Populated by js/cms-events.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover -->
+    <section class="discover" id="discover">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="discover_tag">Descubre</span>
+                <h2 data-lang-key="discover_title">Nuestra mezquita histórica</h2>
+                <p data-lang-key="discover_subtitle">Ubicada en el corazón de La Habana Vieja, Patrimonio de la Humanidad por la UNESCO.</p>
+            </div>
+
+            <div class="discover-grid">
+                <div class="discover-card large">
+                    <img src="images/mosque-exterior.jpg" alt="Exterior de la mezquita">
+                    <div class="discover-overlay">
+                        <h3 data-lang-key="discover_card1">Arquitectura histórica</h3>
+                    </div>
+                </div>
+                <div class="discover-card">
+                    <img src="images/mosque-interior-1.jpg" alt="Interior">
+                    <div class="discover-overlay">
+                        <h3 data-lang-key="discover_card2">Sala de oración</h3>
+                    </div>
+                </div>
+                <div class="discover-card">
+                    <img src="images/mosque-interior-2.jpg" alt="Caligrafía">
+                    <div class="discover-overlay">
+                        <h3 data-lang-key="discover_card3">Arte caligráfico</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social -->
+    <section class="social-feed">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="social_tag">Redes sociales</span>
+                <h2 data-lang-key="social_title">Nuestra vida diaria</h2>
+                <p data-lang-key="social_subtitle">Síguenos y mantente al día</p>
+            </div>
+
+            <div class="social-grid">
+                <a href="https://www.instagram.com/mezquita__abdullah" target="_blank" class="social-card instagram">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>@mezquita__abdullah</p>
+                    <span data-lang-key="social_follow">Síguenos</span>
+                </a>
+                <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank" class="social-card facebook">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <p>Mezquita Abdullah</p>
+                    <span data-lang-key="social_follow">Síguenos</span>
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank" class="social-card whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>Canal oficial</p>
+                    <span data-lang-key="social_join">Unirse</span>
+                </a>
+                <a href="contact.html" class="social-card contact">
+                    <i class="fas fa-phone"></i>
+                    <h3 data-lang-key="social_call_us">Llámanos</h3>
+                    <p>+53 5 9490936</p>
+                    <span data-lang-key="social_contact">Contactar</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3 data-lang-key="site_name">Mezquita Abdullah</h3>
+                    </div>
+                    <p data-lang-key="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-lang-key="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-lang-key="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-lang-key="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-lang-key="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                        <li><i class="fas fa-envelope"></i> mezquitaabdullah1@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba. <span data-lang-key="footer_rights">Todos los derechos reservados.</span></p>
+                <p class="footer-tagline" data-lang-key="footer_tagline">"En las mezquitas que Allah ha permitido erigir" - Corán 24:36</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="support.html" class="donate-float">
+        <i class="fas fa-hands-helping"></i>
+        <span data-lang-key="support_float">Apoya el centro</span>
+    </a>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/prayer-times.js"></script>
+    <script src="js/events-carousel.js"></script>
+    <script src="js/cms-events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
