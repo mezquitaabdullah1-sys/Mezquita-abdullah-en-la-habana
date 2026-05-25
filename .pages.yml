@@ -27,7 +27,7 @@ content:
         sort: date
         order: desc
     fields:
-      - name: name
+      - name: title
         label: "Título / العنوان / Title"
         type: string
         required: true
