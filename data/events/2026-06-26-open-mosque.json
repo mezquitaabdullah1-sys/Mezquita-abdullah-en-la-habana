@@ -1,13 +1,12 @@
 {
-  "title": "Open Mosque Day - Día de puertas abiertas",
+  "name": "**",
   "date": "2026-06-26 14:00",
   "location": "Mezquita Abdullah, Habana Vieja",
   "category": "community",
-  "description": "Visita guiada para no musulmanes. Conoce nuestra mezquita, hace preguntas, y comparte té y dulces tradicionales. Todos son bienvenidos sin importar su religión.",
-  "description_en": "Guided tour for non-Muslims. Learn about our mosque, ask questions, and share tea and traditional sweets. All are welcome regardless of religion.",
-  "description_ar": "جولة مع مرشد لغير المسلمين. تعرّف على المسجد واسأل ما شئت وشاركنا الشاي والحلويات التقليدية. الجميع مرحب بهم.",
-  "description_fr": "Visite guidée pour non-musulmans. Découvrez notre mosquée, posez vos questions et partagez thé et pâtisseries traditionnelles. Tous sont bienvenus.",
-  "image": "",
+  "description": "**",
+  "description_en": "**",
+  "description_ar": "**",
+  "description_fr": "**",
   "register_url": "https://wa.me/5359490936",
   "featured": true,
   "show_on_homepage": true
