@@ -1,14 +1,12 @@
 {
-  "title": "Salat al-Jumu'ah (Oración del Viernes)",
-  "date": "2026-06-05 12:30",
+  "name": "Khutbah Jumuuah",
+  "date": "2026-05-29 14:10",
   "location": "Mezquita Abdullah, Habana Vieja",
   "category": "religious",
-  "description": "Khutbah y oración congregacional del viernes. Tema: 'La paciencia ante las pruebas'. Toda la comunidad está invitada. Hay sección reservada para mujeres.",
-  "description_en": "Friday khutbah and congregational prayer. Topic: 'Patience in trials'. All community welcome. Women's section available.",
-  "description_ar": "خطبة الجمعة وصلاة الجماعة. الموضوع: «الصبر عند الابتلاء». الجميع مرحب بهم. توجد قاعة مخصصة للنساء.",
+  "description": "Khutbah y oración congregacional del viernes. Toda la comunidad está invitada. Hay sección reservada para mujeres.",
+  "description_en": "Friday khutbah and congregational prayer. All community welcome. Women's section available.",
+  "description_ar": "خطبة الجمعة وصلاة الجماعة. الجميع مرحب بهم. توجد قاعة مخصصة للنساء.",
   "description_fr": "Khutbah et prière du vendredi. Thème: 'La patience face aux épreuves'. Toute la communauté est invitée.",
-  "image": "",
-  "register_url": "",
   "featured": true,
   "show_on_homepage": true
 }
