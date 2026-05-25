@@ -1,14 +1,11 @@
 {
-  "title": "Iftar Comunitario y Cena Familiar",
-  "date": "2026-06-20 18:45",
+  "name": "Eid AL Adha",
+  "date": "2026-05-27 20:45",
   "location": "Mezquita Abdullah, Habana Vieja",
-  "category": "iftar",
-  "description": "Cena comunitaria abierta a todos los miembros y visitantes. Comparte una comida tradicional y conoce a tus hermanos y hermanas de la comunidad. Patrocinado por donaciones.",
-  "description_en": "Community dinner open to all members and visitors. Share a traditional meal and meet your community brothers and sisters. Sponsored by donations.",
-  "description_ar": "عشاء جماعي مفتوح لجميع الأعضاء والزوار. شارك وجبة تقليدية وتعرّف على إخوانك وأخواتك في المجتمع. برعاية المتبرّعين.",
-  "description_fr": "Dîner communautaire ouvert à tous les membres et visiteurs. Partagez un repas traditionnel et rencontrez vos frères et sœurs de la communauté.",
-  "image": "",
-  "register_url": "",
+  "category": "religious",
+  "description": "Eid AL Adha , Oracion del Eid",
+  "description_en": "Eid AL Adha , Prayer of the Eid",
+  "description_ar": "عيد الأضحى, صلاة العيد",
   "featured": true,
   "show_on_homepage": true
 }
