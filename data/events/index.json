@@ -1,8 +1,0 @@
-{
-  "_comment": "Lista manual de eventos. Pages CMS guardará cada evento como archivo .json individual en esta carpeta. Este archivo index.json se actualiza para que el sitio sepa qué archivos cargar (ya que los sitios estáticos no pueden listar carpetas).",
-  "files": [
-    "2026-05-22-jumua.json",
-    "2026-05-25-clase-quran.json",
-    "2026-05-30-iftar-comunitario.json"
-  ]
-}
