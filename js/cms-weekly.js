@@ -4,8 +4,9 @@
    ============================================ */
 
 const CMS_WEEKLY = {
-    githubUser: '',   // ej: 'mezquita-abdullah'
-    githubRepo: '',
+    githubUser: 'mezquitaabdullah1-sys
+',   // ej: 'mezquita-abdullah'
+    githubRepo: 'Mezquita-abdullah-en-la-habana',
     githubBranch: 'main',
 
     weekly: [],
