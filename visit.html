@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visítanos - Mezquita Abdullah</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <span>Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" class="active" data-translate="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-translate="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header visit-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="badge"><i class="fas fa-map-marked-alt"></i> <span data-translate="v_badge">Información para visitantes</span></span>
+                <h1 data-translate="v_title">Cómo llegar a la mezquita</h1>
+                <p data-translate="v_subtitle">Toda la información que necesitas: ubicación, transporte, instalaciones y horarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main address card -->
+    <section class="address-section">
+        <div class="container">
+            <div class="address-card">
+                <i class="fas fa-mosque address-icon"></i>
+                <h2 data-translate="address_title">📍 Nuestra dirección</h2>
+                <p class="big-address">Obispo #13 e/ Ave del Puerto<br>Habana Vieja, La Habana, Cuba</p>
+                <p class="coordinates">📌 23.139272, -82.349244</p>
+                <div class="address-actions">
+                    <a href="https://www.google.com/maps?q=23.139272,-82.349244" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i>
+                        <span data-translate="get_directions">Cómo llegar (Google Maps)</span>
+                    </a>
+                    <a href="https://waze.com/ul?ll=23.139272,-82.349244" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-waze"></i>
+                        <span data-translate="open_waze">Abrir en Waze</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="map_tag">Mapa interactivo</span>
+                <h2 data-translate="map_title">🗺️ Encuéntranos fácilmente</h2>
+            </div>
+            
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps?q=23.139272,-82.349244&hl=es&z=17&output=embed"
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: 16px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="map-points">
+                <div class="map-point">
+                    <i class="fas fa-mosque"></i>
+                    <div>
+                        <h4 data-translate="mp_mosque">Mezquita Abdullah</h4>
+                        <p>Obispo #13 · 23.139272, -82.349244</p>
+                    </div>
+                </div>
+                <div class="map-point">
+                    <i class="fas fa-parking"></i>
+                    <div>
+                        <h4 data-translate="mp_parking">Estacionamiento más cercano</h4>
+                        <p>23.139839, -82.348334 · <a href="https://www.google.com/maps?q=23.139839,-82.348334" target="_blank" data-translate="see_map">Ver en mapa</a></p>
+                    </div>
+                </div>
+                <div class="map-point">
+                    <i class="fas fa-bus"></i>
+                    <div>
+                        <h4 data-translate="mp_bus">Parada de bus más cercana</h4>
+                        <p>23.141224, -82.348540 · <a href="https://www.google.com/maps?q=23.141224,-82.348540" target="_blank" data-translate="see_map">Ver en mapa</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="facilities-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="fac_tag">Instalaciones</span>
+                <h2 data-translate="fac_title">🕌 Lo que encontrarás</h2>
+                <p data-translate="fac_subtitle">Todas nuestras instalaciones disponibles para visitantes.</p>
+            </div>
+
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fas fa-male"></i>
+                    <h3 data-translate="fac_men">Sala de oración para hombres</h3>
+                    <p data-translate="fac_men_desc">Espacio principal con alfombra de oración y capacidad para 150 personas.</p>
+                </div>
+                <div class="facility-card highlighted">
+                    <i class="fas fa-female"></i>
+                    <h3 data-translate="fac_women">Sala especial para mujeres</h3>
+                    <p data-translate="fac_women_desc">Espacio separado, cómodo y privado con su propia entrada.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-shower"></i>
+                    <h3 data-translate="fac_wudu_men">Área de wudu hombres</h3>
+                    <p data-translate="fac_wudu_men_desc">Lugar de ablución amplio con bancos y toallas disponibles.</p>
+                </div>
+                <div class="facility-card highlighted">
+                    <i class="fas fa-shower"></i>
+                    <h3 data-translate="fac_wudu_women">Área de wudu mujeres</h3>
+                    <p data-translate="fac_wudu_women_desc">Espacio separado y privado para la ablución de las hermanas.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-book"></i>
+                    <h3 data-translate="fac_library">Biblioteca</h3>
+                    <p data-translate="fac_library_desc">Libros islámicos en español, inglés y árabe disponibles para consulta.</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-wheelchair"></i>
+                    <h3 data-translate="fac_access">Acceso accesible</h3>
+                    <p data-translate="fac_access_desc">Entrada adaptada para personas con movilidad reducida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peak hours warning -->
+    <section class="peak-hours-section">
+        <div class="container">
+            <div class="peak-card">
+                <div class="peak-icon"><i class="fas fa-clock"></i></div>
+                <div class="peak-content">
+                    <h2 data-translate="peak_title">⚠️ Horas pico: Ten en cuenta</h2>
+                    <p data-translate="peak_subtitle">Para una visita más tranquila, evita estas horas si es posible:</p>
+                    
+                    <div class="peak-list">
+                        <div class="peak-item urgent">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <h4 data-translate="peak1_title">Viernes - Oración del Yumu'ah</h4>
+                                <p data-translate="peak1_desc">12:30 - 14:00 · <strong>Hora máxima de afluencia</strong>. Llega 20 min antes o evita esta franja para visitas turísticas.</p>
+                            </div>
+                        </div>
+                        <div class="peak-item">
+                            <i class="fas fa-moon"></i>
+                            <div>
+                                <h4 data-translate="peak2_title">Ramadán - Maghrib (Iftar)</h4>
+                                <p data-translate="peak2_desc">Hora del iftar diario · La mezquita se llena. ¡Todos son bienvenidos a unirse!</p>
+                            </div>
+                        </div>
+                        <div class="peak-item">
+                            <i class="fas fa-sun"></i>
+                            <div>
+                                <h4 data-translate="peak3_title">Fiestas islámicas</h4>
+                                <p data-translate="peak3_desc">Eid al-Fitr y Eid al-Adha · Oración matutina especial con gran asistencia.</p>
+                            </div>
+                        </div>
+                        <div class="peak-item good">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4 data-translate="peak4_title">Mejores horas para visitar</h4>
+                                <p data-translate="peak4_desc">Martes a Jueves · 10:00-12:00 y 15:00-17:00 · Ambiente tranquilo, ideal para conversar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Etiquette -->
+    <section class="etiquette-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-translate="et_tag">Antes de venir</span>
+                <h2 data-translate="et_title">📝 Pequeña guía para tu visita</h2>
+                <p data-translate="et_subtitle">Sin presiones — solo unos consejos para que tu visita sea cómoda.</p>
+            </div>
+
+            <div class="etiquette-grid">
+                <div class="et-item">
+                    <i class="fas fa-shoe-prints"></i>
+                    <h4 data-translate="et1_title">Zapatos</h4>
+                    <p data-translate="et1_desc">Te pediremos quitarte los zapatos a la entrada. Hay estantes para guardarlos.</p>
+                </div>
+                <div class="et-item">
+                    <i class="fas fa-tshirt"></i>
+                    <h4 data-translate="et2_title">Vestimenta</h4>
+                    <p data-translate="et2_desc">Ropa modesta: hombros y rodillas cubiertos. Tenemos chales para las hermanas si lo desean.</p>
+                </div>
+                <div class="et-item">
+                    <i class="fas fa-camera"></i>
+                    <h4 data-translate="et3_title">Fotografías</h4>
+                    <p data-translate="et3_desc">Permitidas en zonas comunes. Evita fotografiar a personas rezando.</p>
+                </div>
+                <div class="et-item">
+                    <i class="fas fa-volume-mute"></i>
+                    <h4 data-translate="et4_title">Silencio</h4>
+                    <p data-translate="et4_desc">Habla en voz baja, especialmente cerca de la sala de oración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3>Mezquita Abdullah</h3>
+                    </div>
+                    <p data-translate="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="support.html" class="donate-float">
+        <i class="fas fa-hands-helping"></i>
+        <span data-translate="support_float">Apoya el centro</span>
+    </a>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

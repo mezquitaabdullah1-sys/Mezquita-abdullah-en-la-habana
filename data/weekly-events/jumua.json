@@ -1,0 +1,10 @@
+{
+  "title": "Salat al-Jumu'ah",
+  "day": "friday",
+  "time": "12:30",
+  "tag": "friday",
+  "description": "Khutbah y oración congregacional del viernes. Toda la comunidad bienvenida.",
+  "location": "Mezquita Abdullah",
+  "highlighted": true,
+  "recurring": true
+}
