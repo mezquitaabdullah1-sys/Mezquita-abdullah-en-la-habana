@@ -27,18 +27,18 @@ content:
         sort: date
         order: desc
     fields:
-      - name: Khutbah Jumuuah. خطبة الجمعة
+      - name: name
         label: "Título / العنوان / Title"
         type: string
         required: true
-      - name: 29-05-2026
+      - name: date
         label: "Fecha y hora / التاريخ والوقت"
         type: date
         required: true
         options:
           format: "yyyy-MM-dd HH:mm"
           time: true
-      - name: Mezquita Abdullah, Habana Vieja. مسجد عبد الله
+      - name: location
         label: "Lugar / المكان"
         type: string
         required: false
