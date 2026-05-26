@@ -1,11 +1,11 @@
 {
   "title": "Eid Al Adha",
-  "date": "2026-05-27 20:45",
+  "date": "2026-05-27 08:30",
   "location": "Mezquita Abdullah, Habana Vieja",
   "category": "religious",
-  "description": "Eid AL Adha , Oracion del Eid",
-  "description_en": "Eid AL Adha , Prayer of the Eid",
-  "description_ar": "عيد الأضحى, صلاة العيد",
+  "description": "Eid AL Adha , Oracion del Eid، precedida por los takbirs de Eid.",
+  "description_en": "Eid AL Adha , Prayer of the Eid ،preceded by the Eid Takbirat.",
+  "description_ar": "عيد الأضحى, صلاة العيد , يسبقها تكبيرات العيد",
   "featured": true,
   "show_on_homepage": true
 }
