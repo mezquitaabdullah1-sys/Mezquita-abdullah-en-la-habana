@@ -1,13 +1,12 @@
 {
-  "name": "***",
+  "title": "Mas eventos ",
   "date": "2026-06-26 14:00",
   "location": "Mezquita Abdullah, Habana Vieja",
-  "category": "community",
+  "category": "religious",
   "description": "**",
   "description_en": "**",
   "description_ar": "**",
   "description_fr": "**",
-  "register_url": "https://wa.me/5359490936",
   "featured": true,
-  "show_on_homepage": true
+  "show_on_homepage": false
 }
