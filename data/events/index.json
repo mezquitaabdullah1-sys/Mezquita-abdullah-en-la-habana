@@ -1,9 +1,0 @@
-{
-  "_comment": "List of event files. Update manually OR configure cms-events.js with githubUser/githubRepo for auto-discovery.",
-  "files": [
-    "2026-06-05-jumua.json",
-    "2026-06-12-clase-tajwid.json",
-    "2026-06-20-iftar.json",
-    "2026-06-26-open-mosque.json"
-  ]
-}
