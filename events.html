@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Actividades - Mezquita Abdullah</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <span>Mezquita Abdullah</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                <li><a href="events.html" class="active" data-translate="nav_events">Eventos</a></li>
+                <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                <li><a href="visit.html" data-translate="nav_visit">Visítanos</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="support.html" class="btn-donate-nav">
+                    <i class="fas fa-hands-helping"></i>
+                    <span data-translate="support_btn">Apoyo</span>
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="ar">🇸🇦 العربية</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header events-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="badge"><i class="fas fa-calendar-alt"></i> <span data-translate="ev_badge">Vida en la comunidad</span></span>
+                <h1 data-translate="ev_title">Eventos y Actividades</h1>
+                <p data-translate="ev_subtitle">Mantente conectado con todas las actividades de la mezquita.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Events (recurring, from Pages CMS) -->
+    <section class="weekly-section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="weekly_tag">Esta semana</span>
+                <h2 data-lang-key="weekly_title">📅 Programa semanal recurrente</h2>
+            </div>
+            <div class="weekly-events-list"></div>
+        </div>
+    </section>
+
+    <!-- Monthly Events (recurring, from Pages CMS) -->
+    <section class="monthly-section" style="padding: 60px 0; background: #f8faf8;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="monthly_tag">Este mes</span>
+                <h2 data-lang-key="monthly_title">🗓️ Eventos mensuales</h2>
+            </div>
+            <div class="monthly-events-grid"></div>
+        </div>
+    </section>
+
+    <!-- Upcoming events (from Pages CMS) -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="upcoming_events_tag">Próximos eventos</span>
+                <h2 data-lang-key="upcoming_events_title"><i class="fas fa-calendar-days"></i> Todos los próximos eventos</h2>
+                <p data-lang-key="upcoming_events_subtitle">Toda la agenda futura de la mezquita. Editable desde Pages CMS.</p>
+            </div>
+            <div class="cms-events-grid" id="cmsAllEventsGrid">
+                <!-- Populated by js/cms-events.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Past events (for reference) -->
+    <section class="past-events-section" style="padding: 60px 0; background: #f8faf8;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-lang-key="past_events_tag">Historial</span>
+                <h2 data-lang-key="past_events_title"><i class="fas fa-history"></i> Eventos pasados</h2>
+                <p data-lang-key="past_events_subtitle">Lo que ya hicimos en nuestra comunidad.</p>
+            </div>
+            <div class="cms-events-grid" id="cmsPastEventsGrid">
+                <!-- Past events populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin notice -->
+    <section class="admin-notice" style="padding: 30px 0; background: linear-gradient(135deg, #fff9e6, #fef7e0);">
+        <div class="container">
+            <div style="display:flex; align-items:center; gap:18px; background:#fff; padding:20px 24px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,0.06); border-left:4px solid #D4AF37; max-width:900px; margin:0 auto; flex-wrap:wrap;">
+                <i class="fas fa-edit" style="color:#D4AF37; font-size:24px;"></i>
+                <div style="flex:1; min-width:200px;">
+                    <strong style="color:#0F5C4E; display:block; margin-bottom:4px;" data-lang-key="cms_admin_title">¿Eres administrador?</strong>
+                    <p style="margin:0; color:#555; font-size:0.92rem;" data-lang-key="cms_admin_desc">Inicia sesión en Pages CMS para añadir, editar o eliminar eventos directamente desde tu navegador.</p>
+                </div>
+                <a href="https://app.pagescms.org" target="_blank" style="background:#0F5C4E; color:#fff; padding:10px 18px; border-radius:999px; text-decoration:none; font-weight:600; font-size:0.9rem;">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                    <span data-lang-key="cms_admin_link">Abrir Pages CMS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo">
+                        <h3>Mezquita Abdullah</h3>
+                    </div>
+                    <p data-translate="footer_about">El primer centro islámico de Cuba.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18zo94WL5i/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mezquita__abdullah" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb7hD1KKmCPJx0NlLU06" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_links">Navegación</h4>
+                    <ul>
+                        <li><a href="learn-islam.html" data-translate="nav_learn_islam">Conoce el Islam</a></li>
+                        <li><a href="new-muslims.html" data-translate="nav_new_muslims">Nuevos Musulmanes</a></li>
+                        <li><a href="events.html" data-translate="nav_events">Eventos</a></li>
+                        <li><a href="calendar.html" data-translate="nav_calendar">Calendario</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footer_contact">Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Obispo #13, Habana Vieja</li>
+                        <li><i class="fas fa-phone"></i> +53 5 9490936</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mezquita Abdullah - La Habana, Cuba.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="support.html" class="donate-float">
+        <i class="fas fa-hands-helping"></i>
+        <span data-translate="support_float">Apoya el centro</span>
+    </a>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/cms-events.js"></script>
+    <script src="js/cms-weekly.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

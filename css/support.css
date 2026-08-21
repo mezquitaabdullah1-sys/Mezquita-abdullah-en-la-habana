@@ -1,0 +1,371 @@
+/* ============================================
+   Support Page - Redesigned v4
+   ============================================ */
+
+/* Hero */
+.support-hero {
+    position: relative;
+    padding: 90px 0 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.support-hero-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+.shape.s1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gold);
+    top: -100px;
+    right: -100px;
+}
+
+.shape.s2 {
+    width: 300px;
+    height: 300px;
+    background: #1a8170;
+    bottom: -80px;
+    left: -80px;
+    animation-delay: -5s;
+}
+
+.shape.s3 {
+    width: 250px;
+    height: 250px;
+    background: #D4AF37;
+    top: 30%;
+    left: 50%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.support-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.support-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 20px 0 18px;
+}
+
+.support-hero > .container > .support-hero-content > p {
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.95;
+    margin-bottom: 32px;
+}
+
+.hadith-quote {
+    background: rgba(0,0,0,0.25);
+    padding: 22px 28px;
+    border-radius: 16px;
+    border-left: 4px solid var(--gold);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    backdrop-filter: blur(8px);
+}
+
+body[dir="rtl"] .hadith-quote {
+    border-left: none;
+    border-right: 4px solid var(--gold);
+    text-align: right;
+}
+
+.hadith-quote i {
+    color: var(--gold-light);
+    font-size: 24px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.hadith-quote p {
+    font-style: italic;
+    font-size: 17px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.hadith-quote span {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Support cards grid */
+.support-grid-section {
+    padding: 80px 0;
+    background: var(--bg-cream);
+}
+
+.support-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.support-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.support-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: var(--gold);
+}
+
+.card-image {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.card-image svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.card-icon-bubble {
+    position: absolute;
+    bottom: -22px;
+    right: 22px;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--primary);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: var(--transition);
+    border: 3px solid var(--white);
+}
+
+.card-icon-bubble.gold { color: var(--gold-dark); }
+
+.support-card:hover .card-icon-bubble {
+    transform: rotate(360deg) scale(1.1);
+}
+
+body[dir="rtl"] .card-icon-bubble {
+    right: auto;
+    left: 22px;
+}
+
+.card-body {
+    padding: 32px 24px 26px;
+}
+
+.card-body h3 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-body p {
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    min-height: 70px;
+}
+
+.card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #25D366, #1faa50);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.card-cta:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+}
+
+body[dir="rtl"] .card-cta:hover {
+    transform: translateX(-4px);
+}
+
+.card-cta i { font-size: 18px; }
+
+/* Motivation Section */
+.motivation-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.motivation-section::before,
+.motivation-section::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.2), transparent 70%);
+}
+
+.motivation-section::before { top: -100px; left: -100px; }
+.motivation-section::after { bottom: -100px; right: -100px; }
+
+.motivation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.quote-big {
+    font-size: 48px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0.5;
+}
+
+.motivation-content p {
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-style: italic;
+}
+
+.motivation-content span {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+/* Contact Section */
+.support-contact-section {
+    padding: 80px 0;
+    background: var(--bg-cream);
+}
+
+.support-contact-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border-top: 6px solid var(--gold);
+}
+
+.scc-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.support-contact-card h2 {
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.support-contact-card > p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.scc-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 24px;
+    background: var(--bg-cream);
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.scc-phone i {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.scc-phone div { text-align: left; }
+body[dir="rtl"] .scc-phone div { text-align: right; }
+
+.scc-phone span {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.scc-phone strong {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.scc-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .support-cards-grid { grid-template-columns: 1fr; }
+    .scc-phone { flex-direction: column; }
+    .scc-phone div { text-align: center !important; }
+    .hadith-quote { text-align: center !important; }
+    .motivation-content p { font-size: 18px; }
+}
