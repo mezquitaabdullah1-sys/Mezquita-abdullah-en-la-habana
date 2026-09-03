@@ -1,9 +1,0 @@
-{
-  "_comment": "List of monthly event files. Update manually after adding/removing in Pages CMS.",
-  "files": [
-    "arabic-course.json",
-    "open-mosque.json",
-    "calligraphy.json",
-    "new-muslims-halaqa.json"
-  ]
-}
