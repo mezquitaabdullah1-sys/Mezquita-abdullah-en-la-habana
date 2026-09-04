@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0F4C3A">
+
+  <!-- 🔒 Content Security Policy — relaxed (inline handlers/scripts aún permitidos, se irán eliminando) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: blob: https:; media-src 'self' https: data: blob: https://cdn.aladhan.com https://www.islamcan.com; connect-src 'self' https://api.aladhan.com https://api.alquran.cloud https://cdn.islamic.network https://api.mymemory.translated.net https://nominatim.openstreetmap.org https://ummahapi.com https://lingva.ml https://libretranslate.com https://libretranslate.de https://cdn.jsdelivr.net https://download.quranicaudio.com https://everyayah.com; manifest-src 'self'; worker-src 'self';">
+
+  <!-- 🌐 Detección temprana de idioma (antes de que scripts corran) -->
+  <script>
+    (function(){
+      try {
+        var s = JSON.parse(localStorage.getItem('quba_settings') || '{}');
+        var lang = s.locale || (navigator.language || 'es').slice(0,2);
+        if (['es','ar','en'].indexOf(lang) < 0) lang = 'es';
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      } catch(e){}
+    })();
+  </script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="description" content="Quba — Tu compañero espiritual islámico: Corán con tafsir, oración, Qibla, calendario hijri, quiz gamificado">
+
+  <title>Quba — Tu compañero espiritual</title>
+
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/screens.css">
+  <link rel="stylesheet" href="css/wisdom.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/calendar-v16.css">
+  <link rel="stylesheet" href="css/qibla-v17.css">
+  <link rel="stylesheet" href="css/quran-reader.css">
+  <link rel="stylesheet" href="css/glass-theme.css">
+  <link rel="stylesheet" href="css/restyle-layout.css">
+  <link rel="stylesheet" href="css/offline.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (SRI removido en v14 para evitar fallos de carga que ocultaban los iconos) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+  <!-- jsPDF — generación de PDF en cliente (local: funciona offline y sin CSP externo) -->
+  <script src="js/vendor/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <!-- 🌟 Splash Screen — Simple logo + fast spinner (no heavy animation) -->
+  <div id="splash" class="splash">
+    <div class="splash-content">
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp">
+        <img src="assets/logo.png" alt="Quba" class="splash-logo-img" width="220" height="220">
+      </picture>
+      <div class="splash-skeleton" aria-hidden="true">
+        <div class="sk-bar" style="width:100%;"></div>
+        <div class="sk-bar" style="width:70%;"></div>
+        <div class="sk-bar" style="width:45%;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Container -->
+  <div id="app" class="app hidden">
+    <main id="main-content" class="main-content"></main>
+
+    <nav class="bottom-tabs">
+      <button class="tab active" data-page="home">
+        <i class="fas fa-home"></i>
+        <span data-i18n="tabHome">Inicio</span>
+      </button>
+      <button class="tab" data-page="quran">
+        <i class="fas fa-book-quran"></i>
+        <span data-i18n="tabQuran">Corán</span>
+      </button>
+      <button class="tab" data-page="prayer">
+        <i class="fas fa-mosque"></i>
+        <span data-i18n="tabPrayer">Oración</span>
+      </button>
+      <button class="tab" data-page="wisdom">
+        <i class="fas fa-lightbulb"></i>
+        <span data-i18n="tabWisdom">Sabiduría</span>
+      </button>
+      <button class="tab" data-page="profile">
+        <i class="fas fa-user"></i>
+        <span data-i18n="tabProfile">Yo</span>
+      </button>
+    </nav>
+  </div>
+
+  <audio id="audio-player" preload="none"></audio>
+
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- Core scripts -->
+  <script src="js/validate.js"></script>
+  <script src="js/version.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/env.public.js"></script>
+    <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/cache-db.js"></script>
+  <script src="js/skeleton.js"></script>
+  <!-- v21: motor de cálculo de oración offline + datos/descarga local del Corán -->
+  <script src="js/prayer-calc.js"></script>
+  <script src="js/pdf-export.js"></script>
+  <!-- v26: check-in diario de oraciones (✔ por oración, se reinicia cada día) -->
+  <script src="js/prayer-tracker.js"></script>
+  <script src="js/quran-offline.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/qibla.js"></script>
+  <script src="js/duas.js"></script>
+  <script src="js/hijri.js"></script>
+
+  <!-- v3: Quran helpers + Tafsir -->
+  <script src="js/quran-helpers.js"></script>
+  <!-- v28: índice de texto completo del Corán + buscador inteligente de aleyas (sin tashkeel) -->
+  <script src="data/quran_search_index.js"></script>
+  <script src="js/quran-search.js"></script>
+  <script src="js/tafsir.js"></script>
+  <script src="js/adhan.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/wake-lock.js"></script>
+  <script src="js/event-delegation.js"></script>
+
+  <!-- Phase 2: Quiz data -->
+  <script src="data/quiz/quran.js"></script>
+  <script src="data/quiz/sira.js"></script>
+  <script src="data/quiz/hadith.js"></script>
+  <script src="data/quiz/fiqh.js"></script>
+  <script src="data/quiz/history.js"></script>
+  <script src="data/quiz/prophets.js"></script>
+
+  <!-- v11: Local Vetted Du'as Dataset (Hisnul Muslim) -->
+  <script src="data/duas/local_duas.js"></script>
+  <script src="data/duas/quran_reading_duas.js"></script>
+
+  <!-- Phase 2: Adhkar data -->
+  <script src="data/adhkar/morning.js"></script>
+  <script src="data/adhkar/evening.js"></script>
+  <script src="data/adhkar/sleep.js"></script>
+  <script src="data/adhkar/after_prayer.js"></script>
+  <!-- Extended Adhkar collections -->
+  <script src="data/adhkar/wake_up.js"></script>
+  <script src="data/adhkar/enter_home.js"></script>
+  <script src="data/adhkar/bathroom.js"></script>
+  <script src="data/adhkar/food_drink.js"></script>
+  <script src="data/adhkar/mosque.js"></script>
+  <script src="data/adhkar/travel.js"></script>
+  <script src="data/adhkar/distress.js"></script>
+  <script src="data/adhkar/friday.js"></script>
+  <script src="data/adhkar/quran_adhkar.js"></script>
+
+  <!-- Phase 2: Courses data -->
+  <script src="data/courses/how_to_pray.js"></script>
+  <script src="data/courses/pillars.js"></script>
+  <script src="data/courses/names_of_allah.js"></script>
+  <!-- v7 interactive courses -->
+  <script src="data/courses/journey.js"></script>
+  <script src="data/courses/kids.js"></script>
+  <script src="data/courses/quran_basics.js"></script>
+  <script src="data/courses/salah_complete.js"></script>
+  <script src="data/courses/wudu_complete.js"></script>
+  <!-- v20: Arabic language course -->
+  <script src="data/courses/arabic_language.js"></script>
+  <script src="js/mascot.js"></script>
+  <script src="data/famous_verses.js"></script>
+  <script src="data/calendar2026.js"></script>
+
+  <!-- Phase 2: Gamification -->
+  <script src="js/gamification.js"></script>
+
+  <!-- Pages -->
+  <script src="pages/home.js"></script>
+  <script src="pages/quran.js"></script>
+  <script src="pages/prayer.js"></script>
+  <script src="pages/calendar.js"></script>
+  <script src="pages/profile.js"></script>
+
+  <!-- Phase 2: Wisdom subpages -->
+  <script src="pages/wisdom/quiz.js"></script>
+  <script src="pages/wisdom/tasbih.js"></script>
+  <script src="pages/wisdom/adhkar.js"></script>
+  <script src="pages/wisdom/courses.js"></script>
+  <script src="pages/wisdom/duas.js"></script>
+  <script src="pages/wisdom.js"></script>
+
+  <!-- App core -->
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+
+
+</body>
+</html>
