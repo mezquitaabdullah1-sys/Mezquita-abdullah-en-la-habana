@@ -1,0 +1,111 @@
+// 🏠 Adhkar al entrar y salir de casa (Adhkar Dukhul wa Khuruj al-Bayt) — TRILINGÜE (es/ar/en)
+const ADHKAR_HOME = [
+  {
+    id: 'enter_home',
+    title: { es: 'Al entrar a casa', ar: 'عند دخول المنزل', en: 'Upon entering the home' },
+    arabic: 'بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا',
+    transliteration: "Bismillahi walajna, wa bismillahi kharajna, wa 'ala Allahi Rabbina tawakkalna",
+    translation: {
+      es: 'En el nombre de Allah entramos, y en el nombre de Allah salimos, y en Allah nuestro Señor confiamos.',
+      ar: 'بسم الله ولجنا، وبسم الله خرجنا، وعلى الله ربنا توكلنا.',
+      en: 'In the name of Allah we enter, in the name of Allah we leave, and in Allah our Lord we trust.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Al decirlo, se debe saludar con el salam a los de la casa (aunque no haya nadie, se saluda a sí mismo).',
+      ar: 'عند قولها يُسلَّم على أهل البيت (وإن لم يكن أحد سلّم على نفسه).',
+      en: 'Upon saying it, greet the household with salam (even if nobody is home, greet yourself).',
+    },
+    source: 'Abu Dawud 5096',
+  },
+  {
+    id: 'exit_home',
+    title: { es: 'Al salir de casa', ar: 'عند الخروج من المنزل', en: 'Upon leaving the home' },
+    arabic: 'بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+    transliteration: "Bismillah, tawakkaltu 'ala Allah, wa la hawla wa la quwwata illa billah",
+    translation: {
+      es: 'En el nombre de Allah, en Allah confío, y no hay poder ni fuerza sino en Allah.',
+      ar: 'بسم الله، توكلت على الله، ولا حول ولا قوة إلا بالله.',
+      en: 'In the name of Allah, I trust in Allah, and there is no power nor might except with Allah.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Se le dirá: "Has sido guiado, protegido y bastado", y los demonios se apartarán de él.',
+      ar: 'يُقال له: هُديت وكُفيت ووُقيت، وتنحى عنه الشياطين.',
+      en: 'It will be said to him: "You are guided, sufficed and protected", and the devils will turn away from him.',
+    },
+    source: 'Abu Dawud 5095',
+  },
+  {
+    id: 'exit_home_dua',
+    title: { es: 'Súplica al salir de casa', ar: 'دعاء الخروج من المنزل', en: 'Supplication upon leaving home' },
+    arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أَضِلَّ أَوْ أُضَلَّ، أَوْ أَزِلَّ أَوْ أُزَلَّ، أَوْ أَظْلِمَ أَوْ أُظْلَمَ، أَوْ أَجْهَلَ أَوْ يُجْهَلَ عَلَيَّ',
+    transliteration: "Allahumma inni a'udhu bika an adilla aw udall, aw azilla aw uzall, aw azlima aw uzlam, aw ajhala aw yujhala 'alayya",
+    translation: {
+      es: '¡Oh Allah! Me refugio en Ti de desviarme o de ser desviado, de resbalar o de ser hecho resbalar, de oprimir o de ser oprimido, de ser ignorante o de que se sea ignorante conmigo.',
+      ar: 'اللهم إني أعوذ بك أن أضل أو أُضل، أو أزل أو أُزل، أو أظلم أو أُظلم، أو أجهل أو يُجهل علي.',
+      en: 'O Allah! I seek refuge in You from going astray or being led astray, from slipping or being made to slip, from oppressing or being oppressed, from acting ignorantly or being treated ignorantly.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Súplica comprensiva de protección para todo lo que se pueda encontrar fuera de casa.',
+      ar: 'دعاء جامع للحماية من كل ما قد يواجهه خارج المنزل.',
+      en: 'A comprehensive supplication for protection from whatever may be encountered outside the home.',
+    },
+    source: 'Abu Dawud 5094',
+  },
+  {
+    id: 'shaytan_no_share',
+    title: { es: 'Al entrar y comer sin recordar Allah (protección)', ar: 'عند الدخول والأكل بذكر الله (حماية)', en: 'Entering and eating with remembrance of Allah (protection)' },
+    arabic: 'بِسْمِ اللَّهِ فِي أَوَّلِهِ وَآخِرِهِ',
+    transliteration: 'Bismillahi fi awwalihi wa akhirihi',
+    translation: {
+      es: 'En el nombre de Allah al principio y al final.',
+      ar: 'بسم الله في أوله وآخره.',
+      en: 'In the name of Allah at its beginning and its end.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Cuando se recuerda Allah al entrar y comer, Shaytan dice: "No hay lugar de descanso ni cena aquí".',
+      ar: 'إذا ذُكر الله عند الدخول والأكل قال الشيطان: لا مبيت لكم ولا عشاء.',
+      en: 'When Allah is remembered upon entering and eating, Shaytan says: "There is no lodging nor dinner for you here".',
+    },
+    source: 'Muslim 2018',
+  },
+  {
+    id: 'call_prayer_home',
+    title: { es: 'Al escuchar el adhan estando en casa', ar: 'عند سماع الأذان في المنزل', en: 'Upon hearing the adhan at home' },
+    arabic: 'وَأَنَا أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، رَضِيتُ بِاللَّهِ رَبًّا، وَبِمُحَمَّدٍ رَسُولًا، وَبِالْإِسْلَامِ دِينًا',
+    transliteration: "Wa ana ashhadu an la ilaha illa Allah wahdahu la sharika lah, wa anna Muhammadan 'abduhu wa rasuluh, raditu billahi Rabban, wa bi-Muhammadin rasulan, wa bil-Islami dinan",
+    translation: {
+      es: 'Y yo atestiguo que no hay divinidad sino Allah, Único, sin asociados, y que Muhammad es Su siervo y Mensajero. Me complazco con Allah como Señor, con Muhammad como Mensajero, y con el Islam como religión.',
+      ar: 'وأنا أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمداً عبده ورسوله، رضيت بالله رباً، وبمحمد رسولاً، وبالإسلام ديناً.',
+      en: 'And I bear witness that there is no god but Allah alone, without partner, and that Muhammad is His servant and Messenger. I am pleased with Allah as Lord, with Muhammad as Messenger, and with Islam as religion.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Quien lo diga después de la shahada del muecín, se le perdonan sus pecados.',
+      ar: 'من قالها بعد شهادة المؤذن غُفرت له ذنوبه.',
+      en: 'Whoever says it after the muezzin\'s testimony has his sins forgiven.',
+    },
+    source: 'Muslim 386',
+  },
+  {
+    id: 'home_barakah',
+    title: { es: 'Súplica por la bendición del hogar', ar: 'دعاء بركة المنزل', en: 'Supplication for the blessing of the home' },
+    arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ، بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا',
+    transliteration: "Allahumma inni as'aluka khayra-l-mawliji wa khayra-l-makhraj, bismillahi walajna, wa bismillahi kharajna, wa 'ala Allahi Rabbina tawakkalna",
+    translation: {
+      es: '¡Oh Allah! Te pido lo mejor de la entrada y lo mejor de la salida. En el nombre de Allah entramos, en el nombre de Allah salimos, y en Allah nuestro Señor confiamos.',
+      ar: 'اللهم إني أسألك خير المولج وخير المخرج، بسم الله ولجنا، وبسم الله خرجنا، وعلى الله ربنا توكلنا.',
+      en: 'O Allah! I ask You for the best of entrances and the best of exits. In the name of Allah we enter, in the name of Allah we leave, and in Allah our Lord we trust.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Súplica que combina protección al entrar y salir del hogar.',
+      ar: 'دعاء يجمع الحماية عند الدخول والخروج من المنزل.',
+      en: 'A supplication combining protection when entering and leaving the home.',
+    },
+    source: 'Abu Dawud 5096',
+  },
+];
