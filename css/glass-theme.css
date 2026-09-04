@@ -1,0 +1,191 @@
+/* ============================================================
+   ✨ Quba — Glass Theme Layer (v18 restyle)
+   Loaded last on purpose: redefines the shared design tokens
+   (--card, --surface, --border, --shadow, --bg) as translucent
+   glass values, then adds backdrop-filter blur + a soft ambient
+   gradient mesh behind the app so every existing component that
+   already consumes those tokens (cards, headers, tabs, modals,
+   badges, calendar cells, quiz chips…) automatically becomes a
+   frosted glass panel — without needing to touch every file.
+   ============================================================ */
+
+:root {
+  /* Glass surfaces — light theme */
+  --bg: #F7F3EA;
+  --card: rgba(255, 255, 255, 0.60);
+  --bg-card: var(--card); /* alias — fixes a pre-existing typo (--bg-card) used in courses.css */
+  --surface: rgba(255, 255, 255, 0.48);
+  --surface-alt: rgba(255, 255, 255, 0.36);
+  --border: rgba(255, 255, 255, 0.55);
+  --shadow: 0 8px 32px rgba(15, 76, 58, 0.14), 0 1px 2px rgba(15, 76, 58, 0.06);
+
+  --glass-blur: 22px;
+  --glass-blur-sm: 12px;
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] {
+  --bg: #070B14;
+  --card: rgba(26, 43, 74, 0.55);
+  --bg-card: var(--card);
+  --surface: rgba(26, 43, 74, 0.42);
+  --surface-alt: rgba(34, 54, 92, 0.38);
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(212, 175, 55, 0.06);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Ambient gradient mesh backdrop ---------- */
+body {
+  background:
+    radial-gradient(ellipse 60% 45% at 8% 0%, rgba(43, 138, 107, 0.30), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 95% 12%, rgba(230, 200, 104, 0.30), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 25% 100%, rgba(15, 76, 58, 0.22), transparent 65%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 55% 40% at 5% 0%, rgba(212, 175, 55, 0.20), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 100% 10%, rgba(43, 138, 107, 0.24), transparent 60%),
+    radial-gradient(ellipse 65% 50% at 30% 100%, rgba(26, 43, 74, 0.55), transparent 65%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.app { background: transparent; }
+
+/* ---------- Core glass surfaces ---------- */
+.card,
+.card-gradient,
+.modal-content,
+.bottom-tabs,
+.top-bar,
+.search-box,
+.btn-ghost,
+.inner-tabs,
+.list-row-icon,
+.surah-number,
+.ayah-number,
+.ayah-play-btn,
+.progress-ring-wrapper,
+.day-cell,
+.virtue-box,
+.virtue-box-quote,
+.quiz-badge,
+.toast,
+.empty-state-icon {
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+}
+
+.card,
+.modal-content,
+.bottom-tabs,
+.qibla-info-card,
+#modal-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow), var(--glass-highlight);
+}
+
+/* ---------- Bottom navigation → floating glass dock ---------- */
+.bottom-tabs {
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  height: auto;
+  padding: 10px 6px calc(8px + env(safe-area-inset-bottom, 0));
+  border-radius: 26px;
+  border-top: none;
+}
+
+@media (min-width: 1024px) {
+  .bottom-tabs { left: 50%; }
+}
+
+.main-content { padding-bottom: 104px; }
+
+/* ---------- Modal ---------- */
+.modal-overlay { backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.modal-content {
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  border-bottom: none;
+}
+
+/* ---------- Top bar / page header — glass strip over the gradient ---------- */
+.top-bar {
+  background: linear-gradient(135deg, rgba(15, 76, 58, 0.85), rgba(26, 107, 82, 0.85));
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .top-bar {
+  background: linear-gradient(135deg, rgba(13, 24, 41, 0.85), rgba(26, 43, 74, 0.85));
+}
+
+.page-header {
+  box-shadow: 0 12px 32px rgba(15, 76, 58, 0.22);
+}
+[data-theme="dark"] .page-header {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Search box / inner tabs — glass chips on the hero ---------- */
+.search-box,
+.inner-tabs {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  box-shadow: 0 6px 20px rgba(15, 76, 58, 0.35), var(--glass-highlight);
+}
+[data-theme="dark"] .btn-primary {
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25), var(--glass-highlight);
+}
+
+.btn-ghost { border: 1px solid var(--border); }
+
+/* ---------- Badges / icon chips ---------- */
+.list-row-icon,
+.surah-number,
+.ayah-number,
+.ayah-play-btn,
+.day-cell,
+.virtue-box,
+.virtue-box-quote,
+.quiz-badge {
+  border: 1px solid var(--border);
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  background: rgba(13, 24, 41, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Splash — soften with the same ambient glow ---------- */
+.splash {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(212, 175, 55, 0.18), transparent 65%),
+    #0F4C3A;
+}
+
+/* ---------- Scrollbar restraint on lower-power devices ---------- */
+@media (max-width: 380px) {
+  :root { --glass-blur: 14px; }
+}
+
+/* Respect reduced transparency / performance preferences */
+@media (prefers-reduced-motion: reduce), (prefers-contrast: more) {
+  .card, .card-gradient, .modal-content, .bottom-tabs, .top-bar, .search-box,
+  .btn-ghost, .inner-tabs, .list-row-icon, .surah-number, .ayah-number,
+  .ayah-play-btn, .progress-ring-wrapper, .day-cell, .virtue-box,
+  .virtue-box-quote, .quiz-badge, .toast {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

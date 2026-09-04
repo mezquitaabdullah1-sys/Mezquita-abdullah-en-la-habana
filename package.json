@@ -1,0 +1,27 @@
+{
+  "name": "quba",
+  "version": "1.0.0",
+  "description": "Quba — Islamic PWA (Corán, oración, Qibla, calendario hijri, cursos, du'as)",
+  "scripts": {
+    "env": "node build/inject-env.js",
+    "bundle": "node build/bundle.js",
+    "bundle:min": "node build/bundle.js --min",
+    "check:secrets": "node build/check-secrets.js",
+    "build:secure": "node build/inject-env.js && node build/bundle.js --min && node build/check-secrets.js",
+    "lint:security": "eslint .",
+    "audit:deps": "npm audit --audit-level=moderate",
+    "serve": "python3 -m http.server 8080",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-security": "^3.0.0"
+  },
+  "keywords": ["islam", "quran", "prayer", "pwa", "islamic-app"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
