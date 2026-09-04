@@ -1,0 +1,111 @@
+// 🕌 Adhkar de la mezquita (Adhkar Dukhul wa Khuruj al-Masjid) — TRILINGÜE (es/ar/en)
+const ADHKAR_MOSQUE = [
+  {
+    id: 'enter_mosque',
+    title: { es: 'Al entrar a la mezquita', ar: 'عند دخول المسجد', en: 'Upon entering the mosque' },
+    arabic: 'أَعُوذُ بِاللَّهِ الْعَظِيمِ، وَبِوَجْهِهِ الْكَرِيمِ، وَسُلْطَانِهِ الْقَدِيمِ، مِنَ الشَّيْطَانِ الرَّجِيمِ. بِسْمِ اللَّهِ، وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللَّهِ، اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ',
+    transliteration: "A'udhu billahi-l-'Azim, wa bi-wajhihi-l-Karim, wa sultanihi-l-qadim, mina-sh-shaytani-r-rajim. Bismillah, was-salatu was-salamu 'ala Rasulillah, Allahumma-ftah li abwaba rahmatik",
+    translation: {
+      es: 'Me refugio en Allah, el Grandioso, en Su Noble Rostro y en Su Poder eterno, del demonio expulsado. En el nombre de Allah, y las bendiciones y la paz sean con el Mensajero de Allah. ¡Oh Allah! Ábreme las puertas de Tu misericordia.',
+      ar: 'أعوذ بالله العظيم، وبوجهه الكريم، وسلطانه القديم، من الشيطان الرجيم. بسم الله، والصلاة والسلام على رسول الله، اللهم افتح لي أبواب رحمتك.',
+      en: 'I seek refuge in Allah the Magnificent, in His Noble Face and His eternal Dominion, from the accursed devil. In the name of Allah, and blessings and peace upon the Messenger of Allah. O Allah! Open for me the doors of Your mercy.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Se debe entrar con el pie derecho. La súplica combina refugio de Shaytan y petición de misericordia.',
+      ar: 'يُشرع الدخول بالرجل اليمنى. وهذا الدعاء يجمع الاستعاذة من الشيطان وطلب الرحمة.',
+      en: 'One should enter with the right foot. The supplication combines refuge from Shaytan and a request for mercy.',
+    },
+    source: 'Abu Dawud 466',
+  },
+  {
+    id: 'exit_mosque',
+    title: { es: 'Al salir de la mezquita', ar: 'عند الخروج من المسجد', en: 'Upon leaving the mosque' },
+    arabic: 'بِسْمِ اللَّهِ، وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللَّهِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ، اللَّهُمَّ اعْصِمْنِي مِنَ الشَّيْطَانِ الرَّجِيمِ',
+    transliteration: "Bismillah, was-salatu was-salamu 'ala Rasulillah, Allahumma inni as'aluka min fadlik, Allahumma-'simni mina-sh-shaytani-r-rajim",
+    translation: {
+      es: 'En el nombre de Allah, y las bendiciones y la paz sean con el Mensajero de Allah. ¡Oh Allah! Te pido de Tu favor. ¡Oh Allah! Protégeme del demonio expulsado.',
+      ar: 'بسم الله، والصلاة والسلام على رسول الله، اللهم إني أسألك من فضلك، اللهم اعصمني من الشيطان الرجيم.',
+      en: 'In the name of Allah, and blessings and peace upon the Messenger of Allah. O Allah! I ask You of Your bounty. O Allah! Protect me from the accursed devil.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Se sale con el pie izquierdo. Se pide el favor de Allah (rizq) porque ahora se sale a los asuntos mundanos.',
+      ar: 'يُخرج بالرجل اليسرى. ويُسأل فضل الله (الرزق) لأن الخروج لأسباب الدنيا.',
+      en: 'One exits with the left foot. Allah\'s bounty (rizq) is asked since one now goes out to worldly affairs.',
+    },
+    source: 'Muslim 713',
+  },
+  {
+    id: 'tahiyyat_masjid',
+    title: { es: 'Tahiyyat al-Masjid (saludo a la mezquita)', ar: 'تحية المسجد', en: 'Tahiyyat al-Masjid (greeting of the mosque)' },
+    arabic: 'رَكْعَتَانِ خَفِيفَتَانِ قَبْلَ الْجُلُوسِ',
+    transliteration: "Rak'atani khafifatani qabla-l-julus",
+    translation: {
+      es: "Dos rak'as ligeras antes de sentarse.",
+      ar: 'ركعتان خفيفتان قبل الجلوس.',
+      en: 'Two light rak\'ahs before sitting down.',
+    },
+    times: 2,
+    benefit: {
+      es: "El Profeta ﷺ dijo: \"Cuando uno de vosotros entre en la mezquita, que no se siente hasta que rece dos rak'as\".",
+      ar: 'قال النبي ﷺ: "إذا دخل أحدكم المسجد فلا يجلس حتى يصلي ركعتين".',
+      en: 'The Prophet ﷺ said: "When one of you enters the mosque, let him not sit until he prays two rak\'ahs".',
+    },
+    source: 'Bukhari 444',
+  },
+  {
+    id: 'adhan_response',
+    title: { es: 'Al escuchar el adhan (en la mezquita o fuera)', ar: 'عند سماع الأذان', en: 'Upon hearing the adhan' },
+    arabic: 'اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ',
+    transliteration: "Allahumma Rabba hadhihi-d-da'wati-t-tammah, was-salati-l-qa'imah, ati Muhammadan-l-wasilata wal-fadilah, wab'athhu maqaman mahmudan-lladhi wa'adtah",
+    translation: {
+      es: '¡Oh Allah, Señor de este llamado perfecto y de la oración establecida! Concede a Muhammad la intercesión y la excelencia, y elévalo al puesto elogiado que le has prometido.',
+      ar: 'اللهم رب هذه الدعوة التامة، والصلاة القائمة، آت محمداً الوسيلة والفضيلة، وابعثه مقاماً محموداً الذي وعدته.',
+      en: 'O Allah, Lord of this perfect call and the established prayer! Grant Muhammad the wasilah and the excellence, and raise him to the praised station You have promised him.',
+    },
+    times: 1,
+    benefit: {
+      es: 'Quien lo dice después del adhan tendrá derecho a la intercesión del Profeta ﷺ el Día del Juicio.',
+      ar: 'من قالها بعد الأذان حلّت له شفاعة النبي ﷺ يوم القيامة.',
+      en: 'Whoever says it after the adhan earns the intercession of the Prophet ﷺ on Judgment Day.',
+    },
+    source: 'Bukhari 614',
+  },
+  {
+    id: 'between_adhan_iqamah',
+    title: { es: 'Entre el adhan y el iqamah', ar: 'بين الأذان والإقامة', en: 'Between the adhan and the iqamah' },
+    arabic: 'الدُّعَاءُ بَيْنَ الْأَذَانِ وَالْإِقَامَةِ لَا يُرَدُّ',
+    transliteration: "Ad-du'a'u bayna-l-adhani wa-l-iqamati la yuradd",
+    translation: {
+      es: 'La súplica entre el adhan y el iqamah no es rechazada.',
+      ar: 'الدعاء بين الأذان والإقامة لا يُرد.',
+      en: 'The supplication between the adhan and the iqamah is not rejected.',
+    },
+    times: 1,
+    benefit: {
+      es: "Momento de aceptación de las du'as. Se pueden pedir todos los asuntos de este mundo y del otro.",
+      ar: 'وقت إجابة للدعاء، فيُسأل فيه من أمور الدنيا والآخرة.',
+      en: 'A time when supplications are answered. One may ask for matters of this world and the next.',
+    },
+    source: 'Abu Dawud 521',
+  },
+  {
+    id: "i'tikaf_intention",
+    title: { es: "Intención de I'tikaf o permanencia en la mezquita", ar: 'نية الاعتكاف أو المكث في المسجد', en: 'Intention of I\'tikaf or staying in the mosque' },
+    arabic: 'نَوَيْتُ الِاعْتِكَافَ فِي هَذَا الْمَسْجِدِ لِلَّهِ تَعَالَى',
+    transliteration: "Nawaytu-l-i'tikafa fi hadha-l-masjidi lillahi ta'ala",
+    translation: {
+      es: 'He hecho la intención de retirarme en esta mezquita por Allah, Exaltado sea.',
+      ar: 'نويت الاعتكاف في هذا المسجد لله تعالى.',
+      en: 'I have intended to seclude myself in this mosque for Allah, the Exalted.',
+    },
+    times: 1,
+    benefit: {
+      es: "Si se hace incluso una intención breve al entrar, cada minuto en la mezquita cuenta como i'tikaf.",
+      ar: 'من نوى ولو نية قصيرة عند الدخول، كُتبت له كل دقيقة في المسجد اعتكافاً.',
+      en: 'If even a brief intention is made upon entering, every minute in the mosque counts as i\'tikaf.',
+    },
+    source: 'Bukhari 2026',
+  },
+];
