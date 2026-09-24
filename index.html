@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>قاعدة بيانات مسجد عبدالله – Mezquita Abdullah</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>">
+</head>
+<body>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app" class="app" hidden>
+
+  <!-- Sidebar / bottom nav -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-logo" id="brandLogo"></span>
+      <div class="brand-text">
+        <strong data-i18n="app.name">قاعدة بيانات مسجد عبدالله</strong>
+        <small data-i18n="app.sub">Mezquita Abdullah</small>
+      </div>
+    </div>
+    <nav class="nav" id="mainNav">
+      <button class="nav-item active" data-view="muslims"><span class="ni">👥</span><span data-i18n="nav.muslims">المسلمون</span></button>
+      <button class="nav-item" data-view="nonmuslims"><span class="ni">🤝</span><span data-i18n="nav.nonmuslims">غير المسلمين</span></button>
+      <button class="nav-item" data-view="courses"><span class="ni">📚</span><span data-i18n="nav.courses">الدورات والحضور</span></button>
+      <button class="nav-item" data-view="stats"><span class="ni">📊</span><span data-i18n="nav.stats">الإحصائيات</span></button>
+      <button class="nav-item" data-view="settings"><span class="ni">⚙️</span><span data-i18n="nav.settings">الإعدادات</span></button>
+    </nav>
+    <div class="sidebar-foot">
+      <small id="storageInfo"></small>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="menu">☰</button>
+      <div class="topbar-logo" id="topLogo"></div>
+      <div class="search-wrap">
+        <span class="si">🔍</span>
+        <input type="search" id="globalSearch" data-i18n-ph="top.search" placeholder="ابحث بالاسم، رقم الكرنيه أو ID...">
+        <button class="icon-btn clear-search" id="clearSearch" hidden>✕</button>
+      </div>
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="ar" class="active">العربية</button>
+        <button data-lang="es">Español</button>
+      </div>
+    </header>
+
+    <main id="viewRoot" class="view-root"></main>
+  </div>
+</div>
+
+<!-- ============ PIN LOCK ============ -->
+<div id="pinLock" class="pin-lock" hidden>
+  <div class="pin-card">
+    <div class="pin-icon">🔒</div>
+    <h2 data-i18n="pin.enter">أدخل رمز PIN</h2>
+    <input type="password" id="pinInput" inputmode="numeric" maxlength="8" autocomplete="off">
+    <div class="pin-actions">
+      <button class="btn primary" id="pinSubmit" data-i18n="pin.unlock">فتح</button>
+      <button class="btn" id="pinReset" data-i18n="pin.forget">نسيت الرمز</button>
+    </div>
+    <p class="muted small" id="pinMsg"></p>
+  </div>
+</div>
+
+<!-- ============ GENERIC MODAL ============ -->
+<div id="modalRoot" class="modal-root" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<!-- ============ WIZARD (full screen) ============ -->
+<div id="wizardRoot" class="wizard-root" hidden>
+  <div class="wizard-shell">
+    <div class="wizard-head">
+      <div class="wz-left">
+        <span class="wz-id" id="wzId">MA-0001</span>
+        <span class="wz-step-label" id="wzStepLabel">1 / 8</span>
+      </div>
+      <div class="wz-title" id="wzTitle" data-i18n="wizard.new">إضافة مسلم جديد</div>
+      <div class="wz-actions">
+        <button class="btn ghost" id="wzDraft" data-i18n="wizard.draft">حفظ كمسودة</button>
+        <button class="btn danger-ghost" id="wzClose" data-i18n="common.cancel">إلغاء</button>
+      </div>
+    </div>
+    <div class="progress"><div class="progress-bar" id="wzProgress"></div></div>
+    <ol class="steps" id="wzSteps"></ol>
+    <div class="wizard-body" id="wzBody"></div>
+    <div class="wizard-foot">
+      <button class="btn" id="wzPrev" data-i18n="common.prev">السابق</button>
+      <div class="wz-dots" id="wzDots"></div>
+      <button class="btn primary" id="wzNext" data-i18n="common.next">التالي</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRINT AREA ============ -->
+<div id="printArea" class="print-area"></div>
+
+<!-- ============ TOASTS ============ -->
+<div id="toasts" class="toasts"></div>
+
+<script src="vendor/chart.umd.js"></script>
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/db.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/persons.js"></script>
+<script src="js/wizard.js"></script>
+<script src="js/others.js"></script>
+<script src="js/courses.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
